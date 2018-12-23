@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/faq_and_news"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_menu_help_black_24dp"
+            android:orderInCategory="0"
+            android:title="@string/FAQ" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_inbox_black_24dp"
+            android:orderInCategory="0"
+            android:title="@string/News" />
+    </group>
+
+
+    <group
+        android:id="@+id/levels"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_level_1"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_1" />
+        <item
+            android:id="@+id/nav_level_2"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_2" />
+        <item
+            android:id="@+id/nav_level_3"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_3" />
+        <item
+            android:id="@+id/nav_level_4"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_4" />
+        <item
+            android:id="@+id/nav_level_5"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_5" />
+        <item
+            android:id="@+id/nav_level_6"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_6" />
+        <item
+            android:id="@+id/nav_level_7"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_7" />
+        <item
+            android:id="@+id/nav_level_8"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_8" />
+
+    </group>
+    <group
+        android:id="@+id/settings_and_enter"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_enter"
+            android:icon="@drawable/ic_menu_import_black"
+            android:orderInCategory="2"
+            android:title="@string/enter_in_Menu" />
+    </group>
+
+</menu>

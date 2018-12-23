@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_header_big_in_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/big_header_in_start"
+            android:textColor="@color/colorForMainText"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_header_small_in_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/small_header_in_start"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/about_algoprog_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_algoprog_header"
+            android:textColor="@color/colorForMainText"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b_i_am_pupil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/b_in_start_pupil"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/b_i_am_student"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/b_in_start_student"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_thin"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/hello_i_am_pupil"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/links_on_context_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/info_for_pupils"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/how_it_works"
+            android:textColor="@color/colorForMainText"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cropToPadding="false"
+            app:srcCompat="@drawable/about_1_levels_2" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_levels"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_2_submit" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_submit"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_3_results" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_results"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_4_comments" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_comments"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_5_ac" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_ac"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_6_ig" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_ig"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/about_7_best" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/about_best"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:text="@string/i_am_interested_in_your_religion"
+            android:textColor="@color/colorForMainText"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</ScrollView>

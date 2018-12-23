@@ -1,0 +1,114 @@
+{
+  "materials": [
+    {
+      "_id": "module-16127_0",
+      "title": "",
+      "type": "label",
+      "content": "<h2>Уровень 1</h2>",
+      "indent": 0
+    },
+    {
+      "_id": "1А",
+      "title": "Уровень 1А",
+      "type": "level"
+    },
+    {
+      "_id": "module-15941_0t",
+      "title": "",
+      "type": "label",
+      "content": "Арифметические операции",
+      "indent": 20
+    },
+    {
+      "_id": "module-15942_0t",
+      "title": "",
+      "type": "label",
+      "content": "Условный оператор",
+      "indent": 20
+    },
+    {
+      "_id": "module-15943_0t",
+      "title": "",
+      "type": "label",
+      "content": "Циклы",
+      "indent": 20
+    },
+    {
+      "_id": "1Б",
+      "title": "Уровень 1Б",
+      "type": "level"
+    },
+    {
+      "_id": "module-15945_0t",
+      "title": "",
+      "type": "label",
+      "content": "Массивы",
+      "indent": 20
+    },
+    {
+      "_id": "module-15946_0t",
+      "title": "",
+      "type": "label",
+      "content": "Символы и строки",
+      "indent": 20
+    },
+    {
+      "_id": "module-15947_0t",
+      "title": "",
+      "type": "label",
+      "content": "Вещественные числа",
+      "indent": 20
+    },
+    {
+      "_id": "module-15948_0t",
+      "title": "",
+      "type": "label",
+      "content": "Работа с графикой (без контеста)",
+      "indent": 20
+    },
+    {
+      "_id": "1В",
+      "title": "Уровень 1В",
+      "type": "level"
+    },
+    {
+      "_id": "module-21146_0t",
+      "title": "",
+      "type": "label",
+      "content": "Вещественные числа",
+      "indent": 20
+    },
+    {
+      "_id": "module-15980_0t",
+      "title": "",
+      "type": "label",
+      "content": "Основы тестирования задач (без контеста)",
+      "indent": 20
+    },
+    {
+      "_id": "module-16264_0t",
+      "title": "",
+      "type": "label",
+      "content": "Задачи",
+      "indent": 20
+    },
+    {
+      "_id": "1Г",
+      "title": "Уровень 1Г",
+      "type": "level"
+    }
+  ],
+  "force": false,
+  "path": [
+    {
+      "_id": "main",
+      "title": "/"
+    }
+  ],
+  "_id": "1",
+  "order": 1,
+  "type": "level",
+  "indent": 0,
+  "title": "Уровень 1",
+  "content": ""
+}

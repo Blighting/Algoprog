@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorForMainText">#333333</color>
+    <color name="textColorPrimary">#000000</color>
+    <color name="colorPrimary">#efefef</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPopup">#ffffff</color>
+    <color name="colorForTextInTasks">#333333</color>
+    <color name="backgroundColor">#00ffffff</color>
+    <color name="colorForTextWithLink">#d32c2c</color>
+</resources>

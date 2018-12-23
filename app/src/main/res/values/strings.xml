@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Algoprog</string>
+    <string name="setting_name">Настройки</string>
+    <string name="exit">Выйти</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="enterText">Вход в систему</string>
+    <string name="usernameInEnter">Имя пользователя</string>
+    <string name="passwordInEnter">Пароль</string>
+    <string name="loginInEnterScreen">Войти</string>
+    <string name="rememberMe">Запомнить меня</string>
+    <string name="savedLogin">xD</string>
+    <string name="invitationForEnter">Войти</string>
+    <string name="title_activity_just_test">JustTestActivity</string>
+    <string name="about_input_title">Входные данные</string>
+    <string name="about_output_title">Выходные данные</string>
+    <string name="examples_title">Примеры</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Algoprog</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="FAQ">О курсе</string>
+    <string name="News">Новости</string>
+    <string name="Level_1">Уровень 1</string>
+    <string name="Level_2">Уровень 2</string>
+    <string name="Level_3">Уровень 3</string>
+    <string name="Level_4">Уровень 4</string>
+    <string name="Level_5">Уровень 5</string>
+    <string name="Level_6">Уровень 6</string>
+    <string name="Level_7">Уровень 7</string>
+    <string name="Level_8">Уровень 8</string>
+    <string name="enter_in_Menu">Войти</string>
+    <string name="change_user">Сменить пользователя</string>
+    <string name="big_header_in_start">Алгоритмическое программирование</string>
+    <string name="small_header_in_start">Очно-заочный курс Петра Калинина</string>
+    <string name="about_algoprog_header">Что это за курс?</string>
+    <string name="b_in_start_pupil">Я школьник</string>
+    <string name="b_in_start_student">Я студент или выпускник</string>
+    <string name="hello_i_am_pupil">В этом курсе вы научитесь программировать, писать сложные алгоритмы и решать олимпиадные задачи. Вы подготовитесь к олимпиадам по информатике, да и задачи части C ЕГЭ вам покажутся проще. В дальнейшем полученные тут знания и умения вам помогут как в вузе, так и в любой деятельности, хоть как-то связанной с программированием.
+        \n\nЗаниматься можно как совсем начинающим, так и тем, кто уже что-то умеет. Вы можете заниматься заочно; также для нижегородцев существуют очные занятия. Занятия для нижегородских школьников бесплатные, для школьников младше 9 класса тоже, для остальных платные.</string>
+    <string name="hello_i_am_student">В этом курсе вы научитесь программировать, писать сложные алгоритмы, понимать и использовать различные структуры данных. Полученные тут знания и умения помогут вам в вузе, пригодятся, если вы соберетесь работать в любой крупной IT-компании, да и вообще будут полезны в любой деятельности, хоть как-то связанной с программированием.
+        \n\nЗаниматься можно как совсем начинающим, так и тем, кто уже что-то умеет. Занятия проходят заочно. Занятия платные.</string>
+    <string name="info_for_pupils">Подробная информация про курс | FAQ для школьников</string>
+    <string name="info_for_student">Подробная информация про курс | FAQ для студентов и выпускников</string>
+    <string name="how_it_works">Как это работает?</string>
+    <string name="about_levels">
+Темы разбиты по уровням по возрастанию сложности: от основ синтаксиса до продвинутых алгоритмов. По большинству тем есть теоретические материалы (статьи, советы, видеолекции) и задачи.</string>
+    <string name="about_submit">Вы изучаете теорию и решаете задачи на своем любимом языке программирования. Задачи отправляете на сайт, и они автоматически проверяются.</string>
+    <string name="about_results">
+Через минуту вы узнаете, правильное решение у вас или неправильное. Если правильное — двигаетесь дальше; если неправильное, думаете, как это исправить.
+</string>
+    <string name="about_comments">Все неправильные решения я вижу и могу вам подсказать, в чем у вас ошибка. Все правильные решения я тоже вижу и просматриваю глазами — насколько оптимально они написаны.</string>
+    <string name="about_ac">Если решение написано достаточно хорошо, я его засчитываю. Могу еще написать небольшие комментарии по вашему коду.</string>
+    <string name="about_ig">Если решение написано не очень хорошо, я его не засчитываю — «игнорирую». К игнорированным решениям я пишу комментарий, и вам надо будет переделать решение.</string>
+    <string name="about_best">Когда ваше решение зачтено, вы получаете доступ к «хорошим решениям», чтобы видеть, как эту задачу решали другие ученики.</string>
+    <string name="i_am_interested_in_your_religion">Как начать заниматься?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
