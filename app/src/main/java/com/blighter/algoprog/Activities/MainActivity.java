@@ -1,7 +1,9 @@
 package com.blighter.algoprog.Activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -17,6 +19,7 @@ import android.view.MenuItem;
 
 import com.blighter.algoprog.Fragments.AboutCourseFragment;
 import com.blighter.algoprog.Fragments.LoginFragment;
+import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.Fragments.StarterFragment;
 import com.blighter.algoprog.R;
 
@@ -49,6 +52,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         addMenuItemInNavMenuDrawer();
+        Intent intent = getIntent();
+        if (intent != null && intent.getData() != null) {
+            Bundle bundle = new Bundle();
+            Uri uri = intent.getData();
+            String id = uri.toString().replaceAll("https://algoprog.ru/material/", "");
+            bundle.putString("id", id);
+            ModuleFragment moduleFragment = new ModuleFragment();
+            moduleFragment.setArguments(bundle);
+            android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
+            fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
+            fragmentTransaction1.addToBackStack(null);
+            fragmentTransaction1.commit();
+        }
     }
 
     private void addMenuItemInNavMenuDrawer() {
