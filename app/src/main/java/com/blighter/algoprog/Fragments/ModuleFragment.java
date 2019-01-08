@@ -8,10 +8,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.blighter.algoprog.R;
@@ -70,13 +68,6 @@ public class ModuleFragment extends Fragment {
                 final WebView browser = cont.findViewById(R.id.browser);
                 browser.loadDataWithBaseURL(basicUrl, document.toString(), "text/html", "utf-8", "");
                 browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-                browser.setWebViewClient(new WebViewClient() {
-                    @Override
-                    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                        view.loadUrl(basicUrl);
-                        return super.shouldOverrideUrlLoading(view, request);
-                    }
-                });
             } else
                 Toast.makeText(cont.getContext(), "Нет подключения к интернету", Toast.LENGTH_SHORT).show();
         }
