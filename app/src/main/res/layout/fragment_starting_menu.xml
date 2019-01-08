@@ -68,7 +68,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/tv_hello_i_am_pupil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -79,13 +79,12 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/links_on_context_info"
+            android:id="@+id/tv_links"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/helvetica_neue_cyr_medium"
             android:lineSpacingMultiplier="1.1"
-            android:text="@string/info_for_pupils"
             android:textColor="@color/colorForMainText"
             android:textSize="18sp" />
 
@@ -229,7 +228,18 @@
             android:text="@string/i_am_interested_in_your_religion"
             android:textColor="@color/colorForMainText"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/how_to_start"
+            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:lineSpacingMultiplier="1.1"
+            android:textColor="@color/colorForMainText"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 
