@@ -12,7 +12,7 @@ import com.blighter.algoprog.R;
 
 import static com.blighter.algoprog.API.ApiMethods.setAboutCourse;
 
-public class AboutCourseFragment extends Fragment {
+public class boutCourseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
