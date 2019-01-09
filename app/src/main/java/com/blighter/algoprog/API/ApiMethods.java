@@ -2,16 +2,12 @@ package com.blighter.algoprog.API;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.widget.Toast;
 
-import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.POJO.Cookies;
 import com.blighter.algoprog.POJO.UserData;
 import com.blighter.algoprog.POJO.me;
 import com.blighter.algoprog.POJO.myUser;
-import com.blighter.algoprog.R;
 import com.blighter.algoprog.RETROFIT.AuthorizationInterface;
 import com.blighter.algoprog.RETROFIT.MeInterface;
 import com.blighter.algoprog.RETROFIT.MyUserInterface;
@@ -29,18 +25,6 @@ import static com.blighter.algoprog.Fragments.LoginFragment.APP_PREFERENCES;
 public class ApiMethods {
     public static final String COOKIES = "cookies";
     public static final Boolean WEHAVECOOKIES = false;
-
-    public static void setAboutCourse(final Context context, final FragmentActivity activity) {
-
-        Bundle bundle = new Bundle();
-        bundle.putString("id", "0");
-        ModuleFragment moduleFragment = new ModuleFragment();
-        moduleFragment.setArguments(bundle);
-        android.support.v4.app.FragmentManager fragmentManager = activity.getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container_in_Main, moduleFragment);
-        fragmentTransaction.commit();
-    }
 
 
     // отправление запроса для получения класса MyUser
