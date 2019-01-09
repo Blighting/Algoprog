@@ -21,7 +21,8 @@
             android:id="@+id/container_in_Main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/backgroundColor"></FrameLayout>
+            android:background="@color/backgroundColor">
+        </FrameLayout>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
