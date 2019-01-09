@@ -60,6 +60,9 @@
     <string name="payment">" платные"</string>
     <string name="full_faq">"Подробная информация про курс "</string>
     <string name="full_faq_for_pupils">"FAQ для школьников"</string>
+    <string name="our_bible">на сайте и напишите мне (контактная информация в разделе</string>
+    <string name="about_course"> О курсе</string>
+    <string name="req">Зарегистрируйтесь </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
