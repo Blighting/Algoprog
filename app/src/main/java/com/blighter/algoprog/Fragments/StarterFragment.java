@@ -123,9 +123,9 @@ public class StarterFragment extends Fragment {
             }
         };
         SpannableString coolSpannableStringForReg = new SpannableString(getString(R.string.req));
-        coolSpannableStringForReg.setSpan(clickableSpan,0,getString(R.string.req).length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        CoolSpannableString coolSpannableStringForAboutCourse = new CoolSpannableString("0",getString(R.string.about_course),getActivity());
-        ssForReqAndCourse[0] = TextUtils.concat(coolSpannableStringForReg," ",getString(R.string.our_bible)," ", coolSpannableStringForAboutCourse.getString(),").");
+        coolSpannableStringForReg.setSpan(clickableSpan, 0, getString(R.string.req).length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        CoolSpannableString coolSpannableStringForAboutCourse = new CoolSpannableString("0", getString(R.string.about_course), getActivity());
+        ssForReqAndCourse[0] = TextUtils.concat(coolSpannableStringForReg, " ", getString(R.string.our_bible), " ", coolSpannableStringForAboutCourse.getString(), ").");
         howToStart.setText(ssForReqAndCourse[0]);
         CoolSpannableString coolSpannableStringForPayment = new CoolSpannableString("pay", getString(R.string.payment), getActivity());
         final SpannableString payment = coolSpannableStringForPayment.getString();
