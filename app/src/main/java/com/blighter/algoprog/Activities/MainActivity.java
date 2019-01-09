@@ -17,7 +17,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.blighter.algoprog.Fragments.AboutCourseFragment;
 import com.blighter.algoprog.Fragments.LoginFragment;
 import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.Fragments.StarterFragment;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         StarterFragment starterFragment = new StarterFragment();
-        fragmentTransaction.add(R.id.container_in_Main, starterFragment);
+        fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
         NavigationView navigationView = findViewById(R.id.nav_viewInMain);
@@ -119,8 +118,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_faq:
                 FragmentManager fragmentManager1 = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-                AboutCourseFragment aboutCourseFragment = new AboutCourseFragment();
-                fragmentTransaction1.replace(R.id.container_in_Main, aboutCourseFragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("id", "0");
+                ModuleFragment moduleFragment = new ModuleFragment();
+                moduleFragment.setArguments(bundle);
+                fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
                 fragmentTransaction1.addToBackStack(null);
                 fragmentTransaction1.commit();
                 break;
