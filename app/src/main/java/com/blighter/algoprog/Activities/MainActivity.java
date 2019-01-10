@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         StarterFragment starterFragment = new StarterFragment();
         fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
-        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
         NavigationView navigationView = findViewById(R.id.nav_viewInMain);
         navigationView.setNavigationItemSelectedListener(this);
