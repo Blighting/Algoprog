@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.blighter.algoprog.CoolThings.CoolStartANewFragment;
 import com.blighter.algoprog.Fragments.LoginFragment;
 import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.Fragments.StarterFragment;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ModuleFragment moduleFragment = new ModuleFragment();
             moduleFragment.setArguments(bundle);
             android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager.beginTransaction();
+            android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
             fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
             fragmentTransaction1.addToBackStack(null);
             fragmentTransaction1.commit();
@@ -106,6 +107,51 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
+            case R.id.nav_level_1:
+                ModuleFragment moduleFragment1 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment1 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment1,"1");
+                coolStartANewFragment1.startFragment();
+                break;
+            case R.id.nav_level_2:
+                ModuleFragment moduleFragment2 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment2 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment2,"2");
+                coolStartANewFragment2.startFragment();
+                break;
+            case R.id.nav_level_3:
+                ModuleFragment moduleFragment3 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment3 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment3,"3");
+                coolStartANewFragment3.startFragment();
+                break;
+            case R.id.nav_level_4:
+                ModuleFragment moduleFragment4 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment4 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment4,"4");
+                coolStartANewFragment4.startFragment();
+                break;
+            case R.id.nav_level_5:
+                ModuleFragment moduleFragment5 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment5 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment5,"5");
+                coolStartANewFragment5.startFragment();
+                break;
+            case R.id.nav_level_6:
+                ModuleFragment moduleFragment6 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment6 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment6,"6");
+                coolStartANewFragment6.startFragment();
+                break;
+            case R.id.nav_level_7:
+                ModuleFragment moduleFragment7 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment7 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment7,"7");
+                coolStartANewFragment7.startFragment();
+                break;
+            case R.id.nav_level_8:
+                ModuleFragment moduleFragment8 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment8 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment8,"8");
+                coolStartANewFragment8.startFragment();
+                break;
+            case R.id.nav_level_9:
+                ModuleFragment moduleFragment9 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment9,"9");
+                coolStartANewFragment9.startFragment();
+                break;
             case R.id.nav_enter:
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -115,15 +161,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction.commit();
                 break;
             case R.id.nav_faq:
-                FragmentManager fragmentManager1 = getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-                Bundle bundle = new Bundle();
-                bundle.putString("id", "0");
                 ModuleFragment moduleFragment = new ModuleFragment();
-                moduleFragment.setArguments(bundle);
-                fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
-                fragmentTransaction1.addToBackStack(null);
-                fragmentTransaction1.commit();
+                CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment,"0");
+                coolStartANewFragment.startFragment();
                 break;
             case R.id.nav_enter + 200:
                 menuExit(this, getSupportActionBar());
