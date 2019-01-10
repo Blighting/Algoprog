@@ -18,15 +18,9 @@ public class CoolSpannableString {
     private ClickableSpan clickableSpan = new ClickableSpan() {
         @Override
         public void onClick(View view) {
-            Bundle bundle = new Bundle();
-            bundle.putString("id", id);
             ModuleFragment moduleFragment = new ModuleFragment();
-            moduleFragment.setArguments(bundle);
-            android.support.v4.app.FragmentManager fragmentManager = activity.getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.container_in_Main, moduleFragment);
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+            CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(activity.getSupportFragmentManager(),moduleFragment,id);
+            coolStartANewFragment.startFragment();
         }
 
         @Override
