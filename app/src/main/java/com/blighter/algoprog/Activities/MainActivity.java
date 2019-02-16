@@ -108,47 +108,47 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()) {
             case R.id.nav_level_1:
                 ModuleFragment moduleFragment1 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment1 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment1,"1");
+                CoolStartANewFragment coolStartANewFragment1 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment1, "1");
                 coolStartANewFragment1.startFragment();
                 break;
             case R.id.nav_level_2:
                 ModuleFragment moduleFragment2 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment2 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment2,"2");
+                CoolStartANewFragment coolStartANewFragment2 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment2, "2");
                 coolStartANewFragment2.startFragment();
                 break;
             case R.id.nav_level_3:
                 ModuleFragment moduleFragment3 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment3 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment3,"3");
+                CoolStartANewFragment coolStartANewFragment3 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment3, "3");
                 coolStartANewFragment3.startFragment();
                 break;
             case R.id.nav_level_4:
                 ModuleFragment moduleFragment4 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment4 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment4,"4");
+                CoolStartANewFragment coolStartANewFragment4 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment4, "4");
                 coolStartANewFragment4.startFragment();
                 break;
             case R.id.nav_level_5:
                 ModuleFragment moduleFragment5 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment5 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment5,"5");
+                CoolStartANewFragment coolStartANewFragment5 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment5, "5");
                 coolStartANewFragment5.startFragment();
                 break;
             case R.id.nav_level_6:
                 ModuleFragment moduleFragment6 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment6 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment6,"6");
+                CoolStartANewFragment coolStartANewFragment6 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment6, "6");
                 coolStartANewFragment6.startFragment();
                 break;
             case R.id.nav_level_7:
                 ModuleFragment moduleFragment7 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment7 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment7,"7");
+                CoolStartANewFragment coolStartANewFragment7 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment7, "7");
                 coolStartANewFragment7.startFragment();
                 break;
             case R.id.nav_level_8:
                 ModuleFragment moduleFragment8 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment8 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment8,"8");
+                CoolStartANewFragment coolStartANewFragment8 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment8, "8");
                 coolStartANewFragment8.startFragment();
                 break;
             case R.id.nav_level_9:
                 ModuleFragment moduleFragment9 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment9,"9");
+                CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment9, "9");
                 coolStartANewFragment9.startFragment();
                 break;
             case R.id.nav_enter:
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_faq:
                 ModuleFragment moduleFragment = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(getSupportFragmentManager(),moduleFragment,"0");
+                CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment, "0");
                 coolStartANewFragment.startFragment();
                 break;
             case R.id.nav_enter + 200:
