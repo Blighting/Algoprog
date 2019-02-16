@@ -1,6 +1,5 @@
 package com.blighter.algoprog.CoolThings;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -19,7 +18,7 @@ public class CoolSpannableString {
         @Override
         public void onClick(View view) {
             ModuleFragment moduleFragment = new ModuleFragment();
-            CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(activity.getSupportFragmentManager(),moduleFragment,id);
+            CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(activity.getSupportFragmentManager(), moduleFragment, id);
             coolStartANewFragment.startFragment();
         }
 
