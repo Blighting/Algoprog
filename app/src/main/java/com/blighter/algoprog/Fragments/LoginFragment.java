@@ -5,11 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -44,7 +42,7 @@ public class LoginFragment extends Fragment {
                     Toast.makeText(getActivity(), "Введите ваш пароль", Toast.LENGTH_SHORT).show();
                 else {
                     UserData user = new UserData(loginText.getText().toString(), passwordText.getText().toString());
-                    sendDataForCookies(user, getActivity(), ((AppCompatActivity) getActivity()).getSupportActionBar());
+                    sendDataForCookies(user, getActivity(), ((AppCompatActivity) getActivity()).getSupportActionBar(), getActivity());
                     CheckBox checkBox = getActivity().findViewById(R.id.cb_for_saving_data);
 
                     if (checkBox.isChecked()) {
@@ -55,31 +53,9 @@ public class LoginFragment extends Fragment {
                         editor.putBoolean("AUTHORIZED", true);
                         editor.apply();
                     }
-                    addMenuItemInNavMenuDrawer();
                 }
             }
         });
         return view;
     }
-
-    private void addMenuItemInNavMenuDrawer() {
-        NavigationView navView = (NavigationView) getActivity().findViewById(R.id.nav_viewInMain);
-
-        Menu menu = navView.getMenu();
-        SharedPreferences sharedPref = getActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        Boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
-        menu.removeItem(R.id.nav_enter);
-        if (authorized) {
-            menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
-            menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
-            menu.removeItem(R.id.nav_enter);
-        } else {
-            menu.removeItem(R.id.nav_enter + 200);
-            menu.removeItem(R.id.nav_enter + 100);
-            menu.add(R.id.settings_and_enter, R.id.nav_enter, 2, R.string.enter_in_Menu).setIcon(R.drawable.ic_menu_import_black);
-        }
-        navView.invalidate();
-    }
-
-
 }
