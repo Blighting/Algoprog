@@ -44,7 +44,7 @@ public class ApiMethods {
 
                          @Override
                          public void onFailure(Call<myUser> call, Throwable t) {
-                             Toast.makeText(context, "succ", Toast.LENGTH_SHORT).show();
+                             Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
                          }
                      }
         );
