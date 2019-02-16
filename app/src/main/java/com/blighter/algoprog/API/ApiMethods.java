@@ -1,13 +1,17 @@
 package com.blighter.algoprog.API;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.design.widget.NavigationView;
+import android.view.Menu;
 import android.widget.Toast;
 
 import com.blighter.algoprog.POJO.Cookies;
 import com.blighter.algoprog.POJO.UserData;
 import com.blighter.algoprog.POJO.me;
 import com.blighter.algoprog.POJO.myUser;
+import com.blighter.algoprog.R;
 import com.blighter.algoprog.RETROFIT.AuthorizationInterface;
 import com.blighter.algoprog.RETROFIT.MeInterface;
 import com.blighter.algoprog.RETROFIT.MyUserInterface;
@@ -72,7 +76,7 @@ public class ApiMethods {
     }
 
     // отправление запроса для получения класса Cookies
-    public static void sendDataForCookies(UserData user, final Context context, final android.support.v7.app.ActionBar actionBar) {
+    public static void sendDataForCookies(UserData user, final Context context, final android.support.v7.app.ActionBar actionBar, final Activity activity) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("https://algoprog.ru/api/")
                 .addConverterFactory(GsonConverterFactory.create());
@@ -89,7 +93,14 @@ public class ApiMethods {
                     editor.putString(COOKIES, cookiesAndSomething[0]);
                     editor.putBoolean("WEHAVECOOKIES", true);
                     editor.apply();
+                    NavigationView navView = (NavigationView) activity.findViewById(R.id.nav_viewInMain);
+                    Menu menu = navView.getMenu();
+                    menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
+                    menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
+                    menu.removeItem(R.id.nav_enter);
+                    navView.invalidate();
                     setNiceTitle(actionBar, context);
+
                 } else {
                     Toast.makeText(context, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
                 }
