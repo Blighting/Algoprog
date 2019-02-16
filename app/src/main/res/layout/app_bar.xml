@@ -6,4 +6,5 @@
     app:elevation="0dp"
     app:subtitleTextAppearance="@style/ToolbarSubtitleAppearance"
     app:theme="@style/CustomToolbarStyle"
-    app:titleTextAppearance="@style/ToolbarTitleAppearance"></android.support.v7.widget.Toolbar>
+    app:titleTextAppearance="@style/ToolbarTitleAppearance">
+</android.support.v7.widget.Toolbar>
