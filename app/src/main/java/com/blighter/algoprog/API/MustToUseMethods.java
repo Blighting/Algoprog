@@ -36,7 +36,7 @@ public class MustToUseMethods {
     }
 
     private static void askForMyUser(final String cookies, final Context context, final android.support.v7.app.ActionBar actionBar) {
-
+        actionBar.setTitle("");
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("https://algoprog.ru/api/")
                 .addConverterFactory(GsonConverterFactory.create());
