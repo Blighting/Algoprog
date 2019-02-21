@@ -13,7 +13,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_header_big_in_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/helvetica_neue_cyr_medium"
@@ -24,7 +23,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_header_small_in_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -35,7 +33,6 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/about_algoprog_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -100,14 +97,12 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:cropToPadding="false"
             app:srcCompat="@drawable/about_1_levels_2" />
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -118,13 +113,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_2_submit" />
 
         <TextView
-            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -135,13 +128,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_3_results" />
 
         <TextView
-            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -152,13 +143,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_4_comments" />
 
         <TextView
-            android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -169,13 +158,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_5_ac" />
 
         <TextView
-            android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -186,13 +173,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_6_ig" />
 
         <TextView
-            android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -203,13 +188,11 @@
             android:textSize="18sp" />
 
         <ImageView
-            android:id="@+id/imageView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/about_7_best" />
 
         <TextView
-            android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -220,7 +203,6 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/helvetica_neue_cyr_light"
