@@ -4,8 +4,9 @@ import com.blighter.algoprog.POJO.MaterialsInTaskList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
-public interface ButtonsInTaskListInterface {
-    @GET("material/{id}")
-    Call<MaterialsInTaskList> getTasks(String id);
+public interface TaskListInterface {
+    @GET("{id}")
+    Call<MaterialsInTaskList> getTasks(@Path("id") String id);
 }
