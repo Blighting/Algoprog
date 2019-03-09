@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.blighter.algoprog.CoolThings.CoolSpannableString;
+import com.blighter.algoprog.utils.CoolSpannableString;
 import com.blighter.algoprog.R;
 
 public class StarterFragment extends Fragment {
