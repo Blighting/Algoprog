@@ -13,7 +13,7 @@ public class Task {
         return path;
     }
 
-    public class Paths {
+    private class Paths {
         String _id;
         String title;
 
