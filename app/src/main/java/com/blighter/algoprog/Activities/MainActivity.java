@@ -17,10 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.blighter.algoprog.CoolThings.CoolStartANewFragment;
+import com.blighter.algoprog.utils.CoolStartANewFragment;
 import com.blighter.algoprog.Fragments.LoginFragment;
 import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.Fragments.StarterFragment;
+import com.blighter.algoprog.Fragments.TaskListsFragment;
 import com.blighter.algoprog.R;
 
 import static com.blighter.algoprog.API.ApiMethods.COOKIES;
@@ -53,16 +54,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         addMenuItemInNavMenuDrawer();
         Intent intent = getIntent();
         if (intent != null && intent.getData() != null) {
-            Bundle bundle = new Bundle();
             Uri uri = intent.getData();
             String id = uri.toString().replaceAll("https://algoprog.ru/material/", "");
-            bundle.putString("id", id);
-            ModuleFragment moduleFragment = new ModuleFragment();
-            moduleFragment.setArguments(bundle);
-            android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-            android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-            fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
-            fragmentTransaction1.commit();
+            if (id.length() != 5) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", id);
+                ModuleFragment moduleFragment = new ModuleFragment();
+                moduleFragment.setArguments(bundle);
+                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
+                fragmentTransaction1.commit();
+            } else {
+                Bundle bundle = new Bundle();
+                bundle.putString("idForTaskList", id);
+                TaskListsFragment taskListFragment = new TaskListsFragment();
+                taskListFragment.setArguments(bundle);
+                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.replace(R.id.container_in_Main, taskListFragment);
+                fragmentTransaction1.commit();
+            }
         }
     }
 
