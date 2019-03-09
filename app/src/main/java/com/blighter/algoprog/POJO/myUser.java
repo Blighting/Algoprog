@@ -31,7 +31,7 @@ public class myUser {
         return level;
     }
 
-    private class Level {
+    public class Level {
         String current;
         String start;
 
