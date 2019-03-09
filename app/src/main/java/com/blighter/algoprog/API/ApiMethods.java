@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.blighter.algoprog.POJO.Cookies;
+import com.blighter.algoprog.POJO.Materials;
+import com.blighter.algoprog.POJO.MaterialsInTaskList;
 import com.blighter.algoprog.POJO.UserData;
 import com.blighter.algoprog.POJO.me;
 import com.blighter.algoprog.POJO.myUser;
@@ -15,6 +17,10 @@ import com.blighter.algoprog.R;
 import com.blighter.algoprog.RETROFIT.AuthorizationInterface;
 import com.blighter.algoprog.RETROFIT.MeInterface;
 import com.blighter.algoprog.RETROFIT.MyUserInterface;
+import com.blighter.algoprog.RETROFIT.TaskListInterface;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -111,5 +117,24 @@ public class ApiMethods {
                 Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public static Materials[] getTasksList(String id) {
+        Materials[] materials = null;
+        Retrofit.Builder builder = new Retrofit.Builder()
+                .baseUrl("https://algoprog.ru/api/material/")
+                .addConverterFactory(GsonConverterFactory.create());
+        Retrofit retrofit = builder.build();
+        TaskListInterface client = retrofit.create(TaskListInterface.class);
+        Call<MaterialsInTaskList> call = client.getTasks(id);
+        try {
+            Response<MaterialsInTaskList> response = call.execute();
+            if (response.body() != null) {
+                materials = response.body().getMaterials();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return materials;
     }
 }
