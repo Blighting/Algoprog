@@ -40,8 +40,7 @@
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_algoprog_header"
             android:textColor="@color/colorForMainText"
-            android:textSize="26sp"
-            android:textStyle="bold" />
+            android:textSize="26sp" />
 
         <Button
             android:id="@+id/b_i_am_pupil"
@@ -69,11 +68,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_thin"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/hello_i_am_pupil"
+            android:textAllCaps="false"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:typeface="sans" />
 
         <TextView
             android:id="@+id/tv_links"
@@ -106,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_levels"
             android:textColor="@color/colorForMainText"
@@ -121,7 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_submit"
             android:textColor="@color/colorForMainText"
@@ -136,7 +137,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_results"
             android:textColor="@color/colorForMainText"
@@ -151,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_comments"
             android:textColor="@color/colorForMainText"
@@ -166,7 +167,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_ac"
             android:textColor="@color/colorForMainText"
@@ -181,7 +182,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_ig"
             android:textColor="@color/colorForMainText"
@@ -196,7 +197,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:fontFamily="@font/helvetica_43"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_best"
             android:textColor="@color/colorForMainText"
@@ -205,13 +206,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/helvetica_neue_cyr_light"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/helvetica_neue_cyr_medium"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/i_am_interested_in_your_religion"
             android:textColor="@color/colorForMainText"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/how_to_start"
