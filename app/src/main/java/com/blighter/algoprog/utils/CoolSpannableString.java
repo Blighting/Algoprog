@@ -1,4 +1,4 @@
-package com.blighter.algoprog.CoolThings;
+package com.blighter.algoprog.utils;
 
 import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
