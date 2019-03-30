@@ -1,4 +1,4 @@
-package com.blighter.algoprog.Fragments;
+package com.blighter.algoprog.fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -15,10 +15,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.blighter.algoprog.POJO.UserData;
+import com.blighter.algoprog.pojo.UserData;
 import com.blighter.algoprog.R;
 
-import static com.blighter.algoprog.API.ApiMethods.sendDataForCookies;
+import static com.blighter.algoprog.api.ApiMethods.sendDataForCookies;
 
 public class LoginFragment extends Fragment {
     public static final Boolean AUTHORIZED = false;
