@@ -1,4 +1,4 @@
-package com.blighter.algoprog.API;
+package com.blighter.algoprog.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -9,8 +9,8 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.widget.Toast;
 
-import com.blighter.algoprog.POJO.myUser;
-import com.blighter.algoprog.RETROFIT.MyUserInterface;
+import com.blighter.algoprog.pojo.myUser;
+import com.blighter.algoprog.retrofit.MyUserInterface;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,11 +18,11 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.blighter.algoprog.API.ApiMethods.COOKIES;
-import static com.blighter.algoprog.Fragments.LoginFragment.APP_PREFERENCES;
+import static com.blighter.algoprog.api.ApiMethods.COOKIES;
+import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class MustToUseMethods {
-    public static float[] getHSV(int rating, double activity) {
+    private static float[] getHSV(int rating, double activity) {
         double R = 160000.0;
         double A = 7.0;
         double h = 11.0 / 12.0 * (1.0 - Math.log(rating + 1.0) / Math.log(R + 1.0));
@@ -30,8 +30,7 @@ public class MustToUseMethods {
         h *= 366;
         float h1 = (float) h;
         float v1 = (float) v;
-        float[] cool = {h1, 100, v1};
-        return cool;
+        return new float[]{h1, 100, v1};
 
     }
 
@@ -81,7 +80,7 @@ public class MustToUseMethods {
 
     public static void setNiceTitle(android.support.v7.app.ActionBar actionBar, Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        Boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
+        boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
         if (authorized) {
             askForMyUser(sharedPref.getString(COOKIES, ""), context, actionBar);
         } else
