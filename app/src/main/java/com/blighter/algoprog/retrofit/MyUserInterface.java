@@ -1,6 +1,6 @@
-package com.blighter.algoprog.RETROFIT;
+package com.blighter.algoprog.retrofit;
 
-import com.blighter.algoprog.POJO.myUser;
+import com.blighter.algoprog.pojo.myUser;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
