@@ -1,4 +1,5 @@
-package com.blighter.algoprog.POJO;
+package com.blighter.algoprog.pojo;
+
 public class Materials {
     private String _id;
 
