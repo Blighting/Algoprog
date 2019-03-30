@@ -1,4 +1,4 @@
-package com.blighter.algoprog.Fragments;
+package com.blighter.algoprog.fragments;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
+
 
 import com.blighter.algoprog.R;
 
@@ -37,8 +38,8 @@ public class ModuleFragment extends Fragment {
     }
 
     private static class myAsyncTask extends AsyncTask<Void, Void, Document> {
+        final View cont;
         String basicUrl = "https://algoprog.ru/material/";
-        View cont;
         Boolean allIsOk = true;
 
         myAsyncTask(View context, String id) {
