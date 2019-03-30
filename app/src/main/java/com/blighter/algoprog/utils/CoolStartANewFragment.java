@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.fragments.ModuleFragment;
 
 public class CoolStartANewFragment {
-    FragmentManager fragmentManager;
-    ModuleFragment fragment;
-    String id;
+    private final FragmentManager fragmentManager;
+    private final ModuleFragment fragment;
+    private final String id;
 
     public CoolStartANewFragment(FragmentManager coolFragmentManager, ModuleFragment coolFragment, String coolId) {
         id = coolId;
