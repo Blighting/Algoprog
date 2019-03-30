@@ -1,9 +1,9 @@
-package com.blighter.algoprog.API;
+package com.blighter.algoprog.api;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import static com.blighter.algoprog.Fragments.LoginFragment.APP_PREFERENCES;
+import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 
 public class MenuMethods {
