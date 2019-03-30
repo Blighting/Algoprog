@@ -1,14 +1,14 @@
-package com.blighter.algoprog.POJO;
+package com.blighter.algoprog.pojo;
 
 public class me {
     Level level;
-    String _id;
-    String username;
-    Integer informaticsId;
-    String informaticsUsername;
-    String aboutme;
-    Boolean admin;
-    Integer __v;
+    private String _id;
+    private String username;
+    private Integer informaticsId;
+    private String informaticsUsername;
+    private String aboutme;
+    private Boolean admin;
+    private Integer __v;
 
     private String get_id() {
         return _id;
