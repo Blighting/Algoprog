@@ -7,14 +7,14 @@ import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
 
-import com.blighter.algoprog.Fragments.ModuleFragment;
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.fragments.ModuleFragment;
 
 public class CoolSpannableString {
-    private String id;
-    private String text;
-    private FragmentActivity activity;
-    private ClickableSpan clickableSpan = new ClickableSpan() {
+    private final String id;
+    private final String text;
+    private final FragmentActivity activity;
+    private final ClickableSpan clickableSpan = new ClickableSpan() {
         @Override
         public void onClick(View view) {
             ModuleFragment moduleFragment = new ModuleFragment();
@@ -40,8 +40,6 @@ public class CoolSpannableString {
         spannableString.setSpan(clickableSpan, 0, text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return spannableString;
     }
-
-    ;
 
 }
 
