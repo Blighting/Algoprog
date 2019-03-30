@@ -1,7 +1,7 @@
-package com.blighter.algoprog.RETROFIT;
+package com.blighter.algoprog.retrofit;
 
-import com.blighter.algoprog.POJO.Cookies;
-import com.blighter.algoprog.POJO.UserData;
+import com.blighter.algoprog.pojo.Cookies;
+import com.blighter.algoprog.pojo.UserData;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
