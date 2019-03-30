@@ -1,4 +1,4 @@
-package com.blighter.algoprog.Fragments;
+package com.blighter.algoprog.fragments;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,8 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.blighter.algoprog.utils.CoolSpannableString;
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.utils.CoolSpannableString;
 
 public class StarterFragment extends Fragment {
     @Nullable
