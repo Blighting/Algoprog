@@ -6,9 +6,6 @@
     <string name="passwordInEnter">Пароль</string>
     <string name="loginInEnterScreen">Войти</string>
     <string name="rememberMe">Запомнить меня</string>
-    <string name="about_input_title">Входные данные</string>
-    <string name="about_output_title">Выходные данные</string>
-    <string name="examples_title">Примеры</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
