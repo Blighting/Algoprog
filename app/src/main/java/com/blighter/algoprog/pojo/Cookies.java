@@ -1,4 +1,4 @@
-package com.blighter.algoprog.POJO;
+package com.blighter.algoprog.pojo;
 
 public class Cookies {
     private static Boolean cookies;
