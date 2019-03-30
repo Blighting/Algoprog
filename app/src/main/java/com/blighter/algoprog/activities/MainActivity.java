@@ -1,4 +1,4 @@
-package com.blighter.algoprog.Activities;
+package com.blighter.algoprog.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,17 +17,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.blighter.algoprog.utils.CoolStartANewFragment;
-import com.blighter.algoprog.Fragments.LoginFragment;
-import com.blighter.algoprog.Fragments.ModuleFragment;
-import com.blighter.algoprog.Fragments.StarterFragment;
-import com.blighter.algoprog.Fragments.TaskListsFragment;
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.fragments.LoginFragment;
+import com.blighter.algoprog.fragments.ModuleFragment;
+import com.blighter.algoprog.fragments.StarterFragment;
+import com.blighter.algoprog.fragments.TaskListsFragment;
+import com.blighter.algoprog.utils.CoolStartANewFragment;
 
-import static com.blighter.algoprog.API.ApiMethods.COOKIES;
-import static com.blighter.algoprog.API.MenuMethods.menuExit;
-import static com.blighter.algoprog.API.MustToUseMethods.setNiceTitle;
-import static com.blighter.algoprog.Fragments.LoginFragment.APP_PREFERENCES;
+import static com.blighter.algoprog.api.ApiMethods.COOKIES;
+import static com.blighter.algoprog.api.MenuMethods.menuExit;
+import static com.blighter.algoprog.api.MustToUseMethods.setNiceTitle;
+import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Menu menu = navView.getMenu();
         SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        Boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
+        boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
         menu.removeItem(R.id.nav_enter);
         if (authorized) {
             menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.remove(COOKIES);
         editor.putBoolean("WEHAVECOOKEIS", false);
+        editor.apply();
     }
 
     @Override
