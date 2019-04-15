@@ -13,6 +13,10 @@ public class Task {
         return path;
     }
 
+    public String getContent() {
+        return content;
+    }
+
     private class Paths {
         String _id;
         String title;
