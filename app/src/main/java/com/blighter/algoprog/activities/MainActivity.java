@@ -80,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void addMenuItemInNavMenuDrawer() {
         NavigationView navView = (NavigationView) findViewById(R.id.nav_viewInMain);
-
         Menu menu = navView.getMenu();
         SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
@@ -99,13 +98,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onStop() {
         SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
+        if(sharedPref.getBoolean("authorized",false))
+            menuExit(MainActivity.this,getSupportActionBar());
         editor.remove(COOKIES);
-        editor.putBoolean("WEHAVECOOKEIS", false);
+        editor.putBoolean("WEHAVECOOKIES", false);
         editor.apply();
+        super.onStop();
     }
 
     @Override
