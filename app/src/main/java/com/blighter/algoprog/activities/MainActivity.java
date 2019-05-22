@@ -165,6 +165,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment9, "9");
                 coolStartANewFragment9.startFragment();
                 break;
+            case R.id.nav_level_10:
+                ModuleFragment moduleFragment10 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment10 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment10, "10");
+                coolStartANewFragment10.startFragment();
+                break;
             case R.id.nav_enter:
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
