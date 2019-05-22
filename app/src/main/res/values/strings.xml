@@ -21,6 +21,7 @@
     <string name="Level_7">Уровень 7</string>
     <string name="Level_8">Уровень 8</string>
     <string name="Level_9">Уровень 9</string>
+    <string name="Level_10">Уровень 10</string>
     <string name="enter_in_Menu">Войти</string>
     <string name="change_user">Сменить пользователя</string>
     <string name="big_header_in_start">Алгоритмическое программирование</string>
