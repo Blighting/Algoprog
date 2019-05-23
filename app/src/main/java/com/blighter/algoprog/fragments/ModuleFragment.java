@@ -12,7 +12,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
-
 import com.blighter.algoprog.R;
 
 import org.jsoup.Jsoup;
@@ -27,31 +26,31 @@ public class ModuleFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_module, container, false);
-        String id = null;
+        String url = null;
         Bundle bundle = getArguments();
         if (bundle != null) {
-            id = bundle.getString("id");
+            url = bundle.getString("url");
         }
-        myAsyncTask showModule = new myAsyncTask(view, id);
+        myAsyncTask showModule = new myAsyncTask(view, url);
         showModule.execute();
         return view;
     }
 
     private static class myAsyncTask extends AsyncTask<Void, Void, Document> {
         final View cont;
-        String basicUrl = "https://algoprog.ru/material/";
         Boolean allIsOk = true;
+        String url = null;
 
-        myAsyncTask(View context, String id) {
+        myAsyncTask(View context, String url) {
             cont = context;
-            basicUrl = basicUrl + id;
+            this.url = url;
         }
 
         @Override
         protected Document doInBackground(Void... voids) {
             Document doc = null;
             try {
-                doc = Jsoup.connect(basicUrl).get();
+                doc = Jsoup.connect(url).get();
                 doc.getElementsByClass("navbar navbar-default navbar-fixed-top").remove();
                 doc.getElementsByClass("_client_components_Sceleton__footer").remove();
                 doc.getElementsByClass("breadcrumb").remove();
@@ -67,7 +66,7 @@ public class ModuleFragment extends Fragment {
             super.onPostExecute(document);
             if (allIsOk) {
                 final WebView browser = cont.findViewById(R.id.browser);
-                browser.loadDataWithBaseURL(basicUrl, document.toString(), "text/html", "utf-8", "");
+                browser.loadDataWithBaseURL(url, document.toString(), "text/html", "utf-8", "");
                 browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
             } else
                 Toast.makeText(cont.getContext(), "Нет подключения к интернету", Toast.LENGTH_SHORT).show();
