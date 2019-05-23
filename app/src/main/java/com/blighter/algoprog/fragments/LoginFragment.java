@@ -15,8 +15,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.blighter.algoprog.pojo.UserData;
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.pojo.UserData;
 
 import static com.blighter.algoprog.api.ApiMethods.sendDataForCookies;
 
