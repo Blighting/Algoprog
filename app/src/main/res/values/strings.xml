@@ -1,17 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Algoprog</string>
-    <string name="exit">Выйти</string>
-    <string name="enterText">Вход в систему</string>
-    <string name="usernameInEnter">Имя пользователя</string>
-    <string name="passwordInEnter">Пароль</string>
-    <string name="loginInEnterScreen">Войти</string>
-    <string name="rememberMe">Запомнить меня</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings" tools:keep="@string/action_settings">Settings</string>
+    <!-- Menu strings-->
     <string name="FAQ">О курсе</string>
-    <string name="News">Новости</string>
+    <string name="news">Новости</string>
     <string name="Level_1">Уровень 1</string>
     <string name="Level_2">Уровень 2</string>
     <string name="Level_3">Уровень 3</string>
@@ -23,7 +14,18 @@
     <string name="Level_9">Уровень 9</string>
     <string name="Level_10">Уровень 10</string>
     <string name="enter_in_Menu">Войти</string>
+    <string name="exit">Выйти</string>
     <string name="change_user">Сменить пользователя</string>
+    <!--Menu names-->
+    <!--Login screen strings-->
+    <string name="enterText">Вход в систему</string>
+    <string name="usernameInEnter">Имя пользователя</string>
+    <string name="passwordInEnter">Пароль</string>
+    <string name="loginInEnterScreen">Войти</string>
+    <string name="rememberMe">Запомнить меня</string>
+    <!--Login fragment strings-->
+
+    <!--Starter fragment strings-->
     <string name="big_header_in_start">Алгоритмическое программирование</string>
     <string name="small_header_in_start">Очно-заочный курс Петра Калинина</string>
     <string name="about_algoprog_header">Что это за курс?</string>
@@ -51,5 +53,27 @@
     <string name="our_bible">на сайте и напишите мне (контактная информация в разделе</string>
     <string name="about_course"> О курсе</string>
     <string name="req">Зарегистрируйтесь </string>
+    <!--Starter fragment strings-->
+
+    <!-- Algoprog menu items urls -->
+    <string name="about_course_url">https://algoprog.ru/material/0</string>
+    <string name="level_1_url">https://algoprog.ru/material/1</string>
+    <string name="level_2_url">https://algoprog.ru/material/2</string>
+    <string name="level_3_url">https://algoprog.ru/material/3</string>
+    <string name="level_4_url">https://algoprog.ru/material/4</string>
+    <string name="level_5_url">https://algoprog.ru/material/5</string>
+    <string name="level_6_url">https://algoprog.ru/material/6</string>
+    <string name="level_7_url">https://algoprog.ru/material/7</string>
+    <string name="level_8_url">https://algoprog.ru/material/8</string>
+    <string name="level_9_url">https://algoprog.ru/material/9</string>
+    <string name="level_10_url">https://algoprog.ru/material/10</string>
+    <string name="news_url">https://algoprog.ru/news</string>
+    <!-- Algoprog menu items urls -->
+
+    <!--No need in translation strings-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <!--No need in translation strings-->
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
