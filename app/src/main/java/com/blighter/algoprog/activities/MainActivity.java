@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intent = getIntent();
         if (intent != null && intent.getData() != null) {
             Uri uri = intent.getData();
-            String id = uri.toString().replaceAll("https://algoprog.ru/material/", "");
-            if (id.length() != 5) {
+            String url = uri.toString();
+            if (url.length() != 34) {
                 Bundle bundle = new Bundle();
-                bundle.putString("id", id);
+                bundle.putString("url", url);
                 ModuleFragment moduleFragment = new ModuleFragment();
                 moduleFragment.setArguments(bundle);
                 android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
@@ -66,8 +66,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
                 fragmentTransaction1.commit();
             } else {
+                String idForTaskList = url.replaceAll("https://algoprog.ru/material/", "");
                 Bundle bundle = new Bundle();
-                bundle.putString("idForTaskList", id);
+                bundle.putString("idForTaskList", idForTaskList);
                 TaskListsFragment taskListFragment = new TaskListsFragment();
                 taskListFragment.setArguments(bundle);
                 android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
@@ -101,8 +102,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStop() {
         SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        if(sharedPref.getBoolean("authorized",false))
-            menuExit(MainActivity.this,getSupportActionBar());
+        if (sharedPref.getBoolean("authorized", false))
+            menuExit(MainActivity.this, getSupportActionBar());
         editor.remove(COOKIES);
         editor.putBoolean("WEHAVECOOKIES", false);
         editor.apply();
@@ -120,54 +121,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
+
+            case R.id.nav_faq:
+                ModuleFragment moduleFragment = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment, getResources().getString(R.string.about_course_url));
+                coolStartANewFragment.startFragment();
+                break;
+            case R.id.nav_news:
+                ModuleFragment moduleFragment0 = new ModuleFragment();
+                CoolStartANewFragment coolStartANewFragment0 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment0, getResources().getString(R.string.news_url));
+                coolStartANewFragment0.startFragment();
+                break;
             case R.id.nav_level_1:
                 ModuleFragment moduleFragment1 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment1 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment1, "1");
+                CoolStartANewFragment coolStartANewFragment1 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment1, getResources().getString(R.string.level_1_url));
                 coolStartANewFragment1.startFragment();
                 break;
             case R.id.nav_level_2:
                 ModuleFragment moduleFragment2 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment2 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment2, "2");
+                CoolStartANewFragment coolStartANewFragment2 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment2, getResources().getString(R.string.level_2_url));
                 coolStartANewFragment2.startFragment();
                 break;
             case R.id.nav_level_3:
                 ModuleFragment moduleFragment3 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment3 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment3, "3");
+                CoolStartANewFragment coolStartANewFragment3 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment3, getResources().getString(R.string.level_3_url));
                 coolStartANewFragment3.startFragment();
                 break;
             case R.id.nav_level_4:
                 ModuleFragment moduleFragment4 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment4 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment4, "4");
+                CoolStartANewFragment coolStartANewFragment4 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment4, getResources().getString(R.string.level_4_url));
                 coolStartANewFragment4.startFragment();
                 break;
             case R.id.nav_level_5:
                 ModuleFragment moduleFragment5 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment5 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment5, "5");
+                CoolStartANewFragment coolStartANewFragment5 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment5, getResources().getString(R.string.level_5_url));
                 coolStartANewFragment5.startFragment();
                 break;
             case R.id.nav_level_6:
                 ModuleFragment moduleFragment6 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment6 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment6, "6");
+                CoolStartANewFragment coolStartANewFragment6 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment6, getResources().getString(R.string.level_6_url));
                 coolStartANewFragment6.startFragment();
                 break;
             case R.id.nav_level_7:
                 ModuleFragment moduleFragment7 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment7 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment7, "7");
+                CoolStartANewFragment coolStartANewFragment7 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment7, getResources().getString(R.string.level_7_url));
                 coolStartANewFragment7.startFragment();
                 break;
             case R.id.nav_level_8:
                 ModuleFragment moduleFragment8 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment8 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment8, "8");
+                CoolStartANewFragment coolStartANewFragment8 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment8, getResources().getString(R.string.level_8_url));
                 coolStartANewFragment8.startFragment();
                 break;
             case R.id.nav_level_9:
                 ModuleFragment moduleFragment9 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment9, "9");
+                CoolStartANewFragment coolStartANewFragment9 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment9, getResources().getString(R.string.level_9_url));
                 coolStartANewFragment9.startFragment();
                 break;
             case R.id.nav_level_10:
                 ModuleFragment moduleFragment10 = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment10 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment10, "10");
+                CoolStartANewFragment coolStartANewFragment10 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment10, getResources().getString(R.string.level_10_url));
                 coolStartANewFragment10.startFragment();
                 break;
             case R.id.nav_enter:
@@ -177,11 +189,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction.replace(R.id.container_in_Main, loginFragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
-                break;
-            case R.id.nav_faq:
-                ModuleFragment moduleFragment = new ModuleFragment();
-                CoolStartANewFragment coolStartANewFragment = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment, "0");
-                coolStartANewFragment.startFragment();
                 break;
             case R.id.nav_enter + 200:
                 menuExit(this, getSupportActionBar());
