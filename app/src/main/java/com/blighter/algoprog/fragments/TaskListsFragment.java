@@ -35,7 +35,8 @@ public class TaskListsFragment extends Fragment {
         asyncTask.execute();
         return view;
     }
-    private class AsyncTask extends android.os.AsyncTask<Void, Void, ArrayList<String>>{
+
+    private class AsyncTask extends android.os.AsyncTask<Void, Void, ArrayList<String>> {
         ArrayList<String> ids = new ArrayList<>();
         String id;
 
@@ -44,7 +45,7 @@ public class TaskListsFragment extends Fragment {
         }
 
         @Override
-        protected ArrayList<String> doInBackground (Void...voids){
+        protected ArrayList<String> doInBackground(Void... voids) {
             Materials[] materials = getTasksList(id);
             ArrayList<String> titles = new ArrayList<>();
             for (int i = 0; i < materials.length; i++) {
@@ -55,7 +56,7 @@ public class TaskListsFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute ( final ArrayList<String> titles){
+        protected void onPostExecute(final ArrayList<String> titles) {
             final ArrayAdapter<String> adapter;
             ListView listView = (ListView) getActivity().findViewById(R.id.lv_for_tasks);
             adapter = new ArrayAdapter<String>(getContext(),
