@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -216,13 +216,12 @@
 
         <TextView
             android:id="@+id/how_to_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/helvetica_neue_cyr_light"
             android:lineSpacingMultiplier="1.1"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
