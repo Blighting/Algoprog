@@ -3,6 +3,7 @@ package com.blighter.algoprog.api;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.support.design.widget.NavigationView;
 import android.view.Menu;
 import android.webkit.WebSettings;
@@ -405,8 +406,11 @@ public class ApiMethods {
                         "</style></head>";
                 String basicUrl = "https://algoprog.ru/material/" + id;
                 String content = response.body().getContent();
+                browser.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    browser.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+                }
                 browser.loadDataWithBaseURL(basicUrl, styles + content, "text/html", "utf-8", "");
-                browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
             }
 
             @Override
