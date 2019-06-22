@@ -58,16 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Uri uri = intent.getData();
             String url = uri.toString();
             String id = url.replaceAll("https://algoprog.ru/material/", "");
-            if (url.length() == 34) {
-                Bundle bundle = new Bundle();
-                bundle.putString("idForTaskList", id);
-                TaskListsFragment taskListFragment = new TaskListsFragment();
-                taskListFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-                fragmentTransaction1.replace(R.id.container_in_Main, taskListFragment);
-                fragmentTransaction1.commit();
-            } else if (id.contains("p")) {
+            if (id.contains("p")) {
                 Bundle bundle = new Bundle();
                 bundle.putString("idForTask", id);
                 TaskFragment taskFragment = new TaskFragment();
@@ -75,6 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
                 android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, taskFragment);
+                fragmentTransaction1.commit();
+            } else if (url.length() == 34) {
+                Bundle bundle = new Bundle();
+                bundle.putString("idForTaskList", id);
+                TaskListsFragment taskListFragment = new TaskListsFragment();
+                taskListFragment.setArguments(bundle);
+                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
+                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.replace(R.id.container_in_Main, taskListFragment);
                 fragmentTransaction1.commit();
             } else {
                 Bundle bundle = new Bundle();
