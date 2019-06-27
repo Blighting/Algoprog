@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="15dp"
-    android:paddingBottom="15dp">
 
-    <TextView
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:id="@+id/tw_list_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,4 +12,3 @@
         android:textAllCaps="false"
         android:textColor="@color/colorForMainText"
         android:textSize="20sp" />
-</RelativeLayout>
