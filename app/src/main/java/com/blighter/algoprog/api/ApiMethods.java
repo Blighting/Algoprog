@@ -153,7 +153,7 @@ public class ApiMethods {
 
             @Override
             public void onResponse(Call<Task> call, Response<Task> response) {
-                String styles ="<head> \n" +
+                String styles = "<head> \n" +
                         "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"> \n" +
                         "  <link rel=\"stylesheet\" href=\"/bundle.css\"> \n" +
                         "  <link rel=\"stylesheet\" href=\"/bootstrap.min.css\"> \n" +
