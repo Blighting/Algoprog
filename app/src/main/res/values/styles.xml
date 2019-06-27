@@ -3,17 +3,35 @@
     <!-- Base application theme. -->
     <!-- Customize your theme here. -->
     <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:background">@color/colorPrimary</item>
         <item name="elevation">0dp</item>
+    </style>
+    <style name="themeForAppBar" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+    <style name="CoolTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/colorPopup</item>
+    </style>
+    <style name="TextAppearance">
+        <item name="colorControlHighlight">@color/activated_color</item>
     </style>
 
     <style name="ToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">20sp</item>
+        <item name="android:background">@color/colorPrimary</item>
         <!-- include other attributes you want to change: textColor, textStyle, etc -->
     </style>
 
     <style name="ToolbarSubtitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
         <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="CustomToolbarStyle.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="CustomToolbarStyle.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="CustomToolbarStyle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
