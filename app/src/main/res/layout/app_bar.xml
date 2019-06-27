@@ -5,5 +5,5 @@
     android:layout_height="wrap_content"
     app:elevation="0dp"
     app:subtitleTextAppearance="@style/ToolbarSubtitleAppearance"
-    app:theme="@style/CustomToolbarStyle"
+    app:theme="@style/themeForAppBar"
     app:titleTextAppearance="@style/ToolbarTitleAppearance"></android.support.v7.widget.Toolbar>
