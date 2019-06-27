@@ -2,7 +2,8 @@
 <resources>
     <color name="colorForMainText">#333333</color>
     <color name="colorPrimary">#efefef</color>
-    <color name="colorPopup">#ffffff</color>
+    <color name="colorPopup">#FFFFFF</color>
+    <color name="activated_color">#E8E8E8</color>
     <color name="colorForTextInTasks">#333333</color>
     <color name="backgroundColor">#00ffffff</color>
     <color name="colorForTextWithLink">#d32c2c</color>
