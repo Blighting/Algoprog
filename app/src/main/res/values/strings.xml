@@ -55,7 +55,7 @@
     <string name="req">Зарегистрируйтесь </string>
     <!--Starter fragment strings-->
 
-    <!-- Algoprog menu items urls -->
+    <!-- Algoprog menu items -->
     <string name="about_course_url">https://algoprog.ru/material/0</string>
     <string name="level_1_url">https://algoprog.ru/material/1</string>
     <string name="level_2_url">https://algoprog.ru/material/2</string>
@@ -68,12 +68,20 @@
     <string name="level_9_url">https://algoprog.ru/material/9</string>
     <string name="level_10_url">https://algoprog.ru/material/10</string>
     <string name="news_url">https://algoprog.ru/news</string>
-    <!-- Algoprog menu items urls -->
+    <string name="text_view_in_navigation_drawer">Algoprog</string>
+    <!-- Algoprog menu items -->
 
+    <!--Task fragment strings-->
+    <string name="infromatics">"Задача на informatics"</string>
+    <!--Task fragment strings-->
     <!--No need in translation strings-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="action_settings">Settings</string>
     <!--No need in translation strings-->
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
