@@ -38,7 +38,7 @@ import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class ApiMethods {
     public static final String COOKIES = "cookies";
-    public static final Boolean WEHAVECOOKIES = false;
+    public static final String WEHAVECOOKIES = "WEHAVECOOKIES";
 
 
     // отправление запроса для получения класса MyUser
@@ -86,7 +86,7 @@ public class ApiMethods {
     }
 
     // отправление запроса для получения класса Cookies
-    public static void sendDataForCookies(UserData user, final Context context, final android.support.v7.app.ActionBar actionBar, final Activity activity) {
+    public static void sendDataForCookies(UserData user, final android.support.v7.app.ActionBar actionBar, final Activity activity) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("https://algoprog.ru/api/")
                 .addConverterFactory(GsonConverterFactory.create());
@@ -97,28 +97,30 @@ public class ApiMethods {
             @Override
             public void onResponse(Call<Cookies> call, Response<Cookies> response) {
                 if (response.body() != null) {
-                    String[] cookiesAndSomething = response.headers().get("Set-Cookie").split(";");
-                    SharedPreferences data = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+                    SharedPreferences data = activity.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = data.edit();
+                    if(!data.getBoolean(WEHAVECOOKIES,false)){
+                        NavigationView navView = (NavigationView) activity.findViewById(R.id.nav_viewInMain);
+                        Menu menu = navView.getMenu();
+                        menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
+                        menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
+                        menu.removeItem(R.id.nav_enter);
+                        navView.invalidate();
+                    }
+                    String[] cookiesAndSomething = response.headers().get("Set-Cookie").split(";");
                     editor.putString(COOKIES, cookiesAndSomething[0]);
                     editor.putBoolean("WEHAVECOOKIES", true);
                     editor.apply();
-                    NavigationView navView = (NavigationView) activity.findViewById(R.id.nav_viewInMain);
-                    Menu menu = navView.getMenu();
-                    menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
-                    menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
-                    menu.removeItem(R.id.nav_enter);
-                    navView.invalidate();
-                    setNiceTitle(actionBar, context);
+                    setNiceTitle(actionBar, activity);
 
                 } else {
-                    Toast.makeText(context, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(activity, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<Cookies> call, Throwable t) {
-                Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
             }
         });
     }
