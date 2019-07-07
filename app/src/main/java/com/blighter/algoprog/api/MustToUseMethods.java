@@ -19,6 +19,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.blighter.algoprog.api.ApiMethods.COOKIES;
+import static com.blighter.algoprog.api.ApiMethods.WEHAVECOOKIES;
 import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class MustToUseMethods {
@@ -80,7 +81,7 @@ public class MustToUseMethods {
 
     public static void setNiceTitle(android.support.v7.app.ActionBar actionBar, Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
+        boolean authorized = sharedPref.getBoolean(WEHAVECOOKIES, false);
         if (authorized) {
             askForMyUser(sharedPref.getString(COOKIES, ""), context, actionBar);
         } else
