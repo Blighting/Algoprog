@@ -1,67 +1,90 @@
 package com.blighter.algoprog.api;
 
-import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
-import android.support.design.widget.NavigationView;
-import android.view.Menu;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.blighter.algoprog.R;
-import com.blighter.algoprog.pojo.Cookies;
-import com.blighter.algoprog.pojo.Materials;
-import com.blighter.algoprog.pojo.MaterialsInTaskList;
+import com.blighter.algoprog.pojo.BestSolution;
 import com.blighter.algoprog.pojo.Task;
-import com.blighter.algoprog.pojo.UserData;
 import com.blighter.algoprog.pojo.me;
-import com.blighter.algoprog.pojo.myUser;
-import com.blighter.algoprog.retrofit.AuthorizationInterface;
+import com.blighter.algoprog.retrofit.BestSolutionsInterface;
+import com.blighter.algoprog.retrofit.Client;
 import com.blighter.algoprog.retrofit.MeInterface;
-import com.blighter.algoprog.retrofit.MyUserInterface;
 import com.blighter.algoprog.retrofit.TaskInterface;
-import com.blighter.algoprog.retrofit.TaskListInterface;
+import com.mukesh.MarkdownView;
 
-import java.io.IOException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.safety.Whitelist;
 
+import java.util.List;
+
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.blighter.algoprog.api.MustToUseMethods.setNiceTitle;
-import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
-
 
 public class ApiMethods {
     public static final String COOKIES = "cookies";
-    public static final String WEHAVECOOKIES = "WEHAVECOOKIES";
+    public static final String FIRST_LEVEL_AUTHORIZED = "first_level_authorization";
 
+    public static CompositeDisposable getBestSolutions(String cookies, String taskId, Context context) {
+        CompositeDisposable disposables = new CompositeDisposable();
+        BestSolutionsInterface client = Client.getClient().create(BestSolutionsInterface.class);
+        client.getBestSolutions(cookies, taskId).
+                subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<List<BestSolution>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
 
-    // отправление запроса для получения класса MyUser
-    public static void askForMyUser(String cookies, final Context context) {
+                    }
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://algoprog.ru/api/")
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-        MyUserInterface client = retrofit.create(MyUserInterface.class);
-        Call<myUser> call = client.getMyUserInfo(cookies);
-        call.enqueue(new Callback<myUser>() {
-                         @Override
-                         public void onResponse(Call<myUser> call, Response<myUser> response) {
-                             final myUser userData = response.body();
-                         }
+                    @Override
+                    public void onNext(List<BestSolution> bestSolutions) {
+                        Document.OutputSettings settings = new Document.OutputSettings().prettyPrint(false);
+                        String markdownHtml = "";
+                        for (int i = 0; i < bestSolutions.size(); i++) {
+                            markdownHtml = markdownHtml + "\n```" + bestSolutions.get(i).getLanguage().replaceAll("[^a-zA-Z]+", "") + "\n";
+                            markdownHtml = markdownHtml + replaceHtmlTags(bestSolutions.get(i).getSource()) + "\n```\n";
+                            markdownHtml = markdownHtml + "<p>" + bestSolutions.get(i).getLanguage() + "</p>" + "\n<hr></hr>\n";
+                        }
+                        String cool = Jsoup.clean(bestSolutions.get(1).getSource(), "", Whitelist.none(), settings);
+                        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+                        alertDialog.setPositiveButton("Закрыть", (dialog, which) -> {
+                        });
+                        View mView = ((FragmentActivity) context).getLayoutInflater().inflate(R.layout.alert_dialog_for_best_submits, null);
+                        MarkdownView markdownView = (MarkdownView) mView.findViewById(R.id.markdown_view);
+                        markdownView.setMarkDownText(markdownHtml);
+                        alertDialog.setView(mView);
+                        AlertDialog alertDialog1 = alertDialog.create();
+                        alertDialog1.show();
+                    }
 
-                         @Override
-                         public void onFailure(Call<myUser> call, Throwable t) {
-                             Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
-                         }
-                     }
-        );
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(context, "Неизвестная ошибка", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+        return disposables;
     }
 
     // отправление запроса для получения класса Me
@@ -85,115 +108,71 @@ public class ApiMethods {
 
     }
 
-    // отправление запроса для получения класса Cookies
-    public static void sendDataForCookies(UserData user, final android.support.v7.app.ActionBar actionBar, final Activity activity) {
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://algoprog.ru/api/")
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-        AuthorizationInterface client = retrofit.create(AuthorizationInterface.class);
-        Call<Cookies> call = client.getCookies(user);
-        call.enqueue(new Callback<Cookies>() {
-            @Override
-            public void onResponse(Call<Cookies> call, Response<Cookies> response) {
-                if (response.body() != null) {
-                    SharedPreferences data = activity.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = data.edit();
-                    if(!data.getBoolean(WEHAVECOOKIES,false)){
-                        NavigationView navView = (NavigationView) activity.findViewById(R.id.nav_viewInMain);
-                        Menu menu = navView.getMenu();
-                        menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
-                        menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
-                        menu.removeItem(R.id.nav_enter);
-                        navView.invalidate();
+
+    public static CompositeDisposable setTask(final String id, final WebView browser, final Context context) {
+        TaskInterface client = Client.getClient().create(TaskInterface.class);
+        CompositeDisposable compositeDisposable = new CompositeDisposable();
+        client.getTask(id).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Task>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        compositeDisposable.add(d);
                     }
-                    String[] cookiesAndSomething = response.headers().get("Set-Cookie").split(";");
-                    editor.putString(COOKIES, cookiesAndSomething[0]);
-                    editor.putBoolean("WEHAVECOOKIES", true);
-                    editor.apply();
-                    setNiceTitle(actionBar, activity);
 
-                } else {
-                    Toast.makeText(activity, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
-                }
-            }
+                    @Override
+                    public void onNext(Task task) {
+                        String styles = "<head> \n" +
+                                "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/bundle.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/bootstrap.min.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/react-diff-view.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/informatics.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/highlight.css\"> \n" +
+                                "  <link rel=\"stylesheet\" href=\"/main.css\"> \n" +
+                                " <meta name=\"viewport\" content=\"width=device-width, user-scalable=yes\" />" +
+                                "</head>" +
+                                "<script type=\"text/x-mathjax-config\">" +
+                                "  MathJax.Hub.Config({\n" +
+                                "  CommonHTML: { linebreaks: { automatic: true },EqnChunk:(MathJax.Hub.Browser.isMobile?10:50) },displayAlign: \"left\",\n" +
+                                "  \"HTML-CSS\": { linebreaks: { automatic: true } ," +
+                                "\n" +
+                                "    preferredFont: \"STIX\"}," +
+                                "extensions: [\"tex2jax.js\"],messageStyle:\"none\"," +
+                                "jax: [\"input/TeX\", \"input/MathML\",\"output/HTML-CSS\"]," +
+                                "tex2jax: {inlineMath: [['$','$'],['\\\\(','\\\\)']]}" +
+                                "});" +
+                                "</script>" +
+                                "<script type=\"text/javascript\" async src=\"file:///android_asset/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>" +
+                                "" +
+                                "</body>" +
+                                "</html>";
+                        String basicUrl = "https://algoprog.ru/material/" + id;
+                        String content = task.getContent();
+                        browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+                        browser.getSettings().setJavaScriptEnabled(true);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            browser.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+                        }
+                        browser.loadDataWithBaseURL(basicUrl, styles + content, "text/html", "utf-8", "");
+                    }
 
-            @Override
-            public void onFailure(Call<Cookies> call, Throwable t) {
-                Toast.makeText(activity, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onError(Throwable e) {
+                        Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+        return compositeDisposable;
+
+
     }
 
-    public static Materials[] getTasksList(String id) {
-        Materials[] materials = null;
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://algoprog.ru/api/material/")
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-        TaskListInterface client = retrofit.create(TaskListInterface.class);
-        Call<MaterialsInTaskList> call = client.getTasks(id);
-        try {
-            Response<MaterialsInTaskList> response = call.execute();
-            if (response.body() != null) {
-                materials = response.body().getMaterials();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return materials;
-    }
-
-    public static void setTask(final String id, final WebView browser, final Context context) {
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl("https://algoprog.ru/api/material/")
-                .addConverterFactory(GsonConverterFactory.create());
-        Retrofit retrofit = builder.build();
-        TaskInterface client = retrofit.create(TaskInterface.class);
-        Call<Task> call = client.getTask(id);
-        call.enqueue(new Callback<Task>() {
-
-            @Override
-            public void onResponse(Call<Task> call, Response<Task> response) {
-                String styles = "<head> \n" +
-                        "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/bundle.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/bootstrap.min.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/react-diff-view.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/informatics.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/highlight.css\"> \n" +
-                        "  <link rel=\"stylesheet\" href=\"/main.css\"> \n" +
-                        " <meta name=\"viewport\" content=\"width=device-width, user-scalable=yes\" />" +
-                        "</head>" +
-                        "<script type=\"text/x-mathjax-config\">" +
-                        "  MathJax.Hub.Config({\n" +
-                        "  CommonHTML: { linebreaks: { automatic: true },EqnChunk:(MathJax.Hub.Browser.isMobile?10:50) },displayAlign: \"left\",\n" +
-                        "  \"HTML-CSS\": { linebreaks: { automatic: true } ," +
-                        "\n" +
-                        "    preferredFont: \"STIX\"}," +
-                        "extensions: [\"tex2jax.js\"],messageStyle:\"none\"," +
-                        "jax: [\"input/TeX\", \"input/MathML\",\"output/HTML-CSS\"]," +
-                        "tex2jax: {inlineMath: [['$','$'],['\\\\(','\\\\)']]}" +
-                        "});" +
-                        "</script>" +
-                        "<script type=\"text/javascript\" async src=\"file:///android_asset/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML\"></script>" +
-                        "" +
-                        "</body>" +
-                        "</html>";
-                String basicUrl = "https://algoprog.ru/material/" + id;
-                String content = response.body().getContent();
-                browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-                browser.getSettings().setJavaScriptEnabled(true);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    browser.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-                }
-                browser.loadDataWithBaseURL(basicUrl, styles + content, "text/html", "utf-8", "");
-            }
-
-            @Override
-            public void onFailure(Call<Task> call, Throwable t) {
-                Toast.makeText(context, "Не удалось связаться с сервером. Проверьте подключение к интернету.", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private static String replaceHtmlTags(String s) {
+        return s.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&le;", "<=").replaceAll("&ge;", ">=");
     }
 }
