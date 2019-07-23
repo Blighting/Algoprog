@@ -25,35 +25,32 @@ import com.blighter.algoprog.fragments.TaskFragment;
 import com.blighter.algoprog.fragments.TaskListsFragment;
 import com.blighter.algoprog.utils.CoolStartANewFragment;
 
+import io.reactivex.disposables.CompositeDisposable;
+
 import static com.blighter.algoprog.api.ApiMethods.COOKIES;
+import static com.blighter.algoprog.api.ApiMethods.FIRST_LEVEL_AUTHORIZED;
 import static com.blighter.algoprog.api.MenuMethods.menuExit;
 import static com.blighter.algoprog.api.MustToUseMethods.setNiceTitle;
 import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
+    private CompositeDisposable disposables;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar_in_main);
-        setSupportActionBar(toolbar);
-        ActionBar ab = getSupportActionBar();
-        setNiceTitle(ab, MainActivity.this);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        StarterFragment starterFragment = new StarterFragment();
-        fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
-        fragmentTransaction.commit();
+        Intent intent = getIntent();
         NavigationView navigationView = findViewById(R.id.nav_viewInMain);
         navigationView.setNavigationItemSelectedListener(this);
         mDrawerLayout = findViewById(R.id.drawer_layout);
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar_in_main);
+        setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         addMenuItemInNavMenuDrawer();
-        Intent intent = getIntent();
         if (intent != null && intent.getData() != null) {
             Uri uri = intent.getData();
             String url = uri.toString();
@@ -86,6 +83,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
                 fragmentTransaction1.commit();
             }
+        } else {
+            ActionBar ab = getSupportActionBar();
+            disposables = setNiceTitle(ab, MainActivity.this, findViewById(R.id.nav_viewInMain));
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            StarterFragment starterFragment = new StarterFragment();
+            fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
+            fragmentTransaction.commit();
         }
     }
 
@@ -217,5 +222,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (disposables != null) {
+            disposables.dispose();
+        }
+        SharedPreferences sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences.Editor edtior = sharedPreferences.edit();
+        edtior.remove(FIRST_LEVEL_AUTHORIZED);
+        edtior.apply();
+        super.onDestroy();
     }
 }
