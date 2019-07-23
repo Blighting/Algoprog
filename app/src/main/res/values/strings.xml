@@ -71,6 +71,10 @@
     <string name="text_view_in_navigation_drawer">Algoprog</string>
     <!-- Algoprog menu items -->
 
+    <!-- BestSubmits menu items -->
+    <string name="header_in_best_submits">Хорошие решения</string>
+    <!-- BestSubmits menu items -->
+
     <!--Task fragment strings-->
     <string name="infromatics">"Задача на informatics"</string>
     <!--Task fragment strings-->
@@ -83,5 +87,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="action_settings">Settings</string>
     <!--No need in translation strings-->
+
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
