@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_in_bestSubmits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/helvetica_43"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/header_in_best_submits"
+        android:textColor="@color/colorForMainText"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.mukesh.MarkdownView
+        android:id="@+id/markdown_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"></com.mukesh.MarkdownView>
+
+
+</LinearLayout>
+
