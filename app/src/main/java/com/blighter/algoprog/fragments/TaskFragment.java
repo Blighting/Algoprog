@@ -18,10 +18,15 @@ import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.utils.UrlInterceptor;
+
+import io.reactivex.disposables.CompositeDisposable;
 
 import static com.blighter.algoprog.api.ApiMethods.setTask;
 
 public class TaskFragment extends Fragment {
+    private CompositeDisposable disposables;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,7 +37,8 @@ public class TaskFragment extends Fragment {
             id = bundle.getString("idForTask");
         }
         WebView browser = (WebView) view.findViewById(R.id.wb_for_task);
-        setTask(id, browser, getContext());
+        browser.setWebViewClient(new UrlInterceptor(getContext()));
+        CompositeDisposable compositeDisposable = setTask(id, browser, getContext());
         TextView tv_informatics = (TextView) view.findViewById(R.id.tv_in_task_informatics);
         final String link = "https://informatics.mccme.ru/moodle/mod/statements/view3.php?chapterid=" + id.replace("p", "");
         tv_informatics.setMovementMethod(LinkMovementMethod.getInstance());
@@ -55,5 +61,13 @@ public class TaskFragment extends Fragment {
         coolSpannableStringForInformatics.setSpan(clickableSpan, 0, getString(R.string.infromatics).length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tv_informatics.setText(coolSpannableStringForInformatics);
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (disposables != null) {
+            disposables.dispose();
+        }
+        super.onDestroyView();
     }
 }
