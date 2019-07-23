@@ -1,10 +1,11 @@
 package com.blighter.algoprog.fragments;
 
-import android.os.AsyncTask;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +14,22 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.blighter.algoprog.R;
+import com.blighter.algoprog.utils.UrlInterceptor;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
+import java.util.concurrent.Callable;
+
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class ModuleFragment extends Fragment {
-    String url;
+    CompositeDisposable disposables;
 
     @Nullable
     @Override
@@ -30,46 +39,56 @@ public class ModuleFragment extends Fragment {
         Bundle bundle = getArguments();
         if (bundle != null) {
             url = bundle.getString("url");
+            setModule(getContext(), url, view.findViewById(R.id.browser));
+        } else {
+            Toast.makeText(getContext(), "Что-то пошло не так", Toast.LENGTH_LONG).show();
+            getActivity().onBackPressed();
         }
-        myAsyncTask showModule = new myAsyncTask(view, url);
-        showModule.execute();
         return view;
     }
 
-    private static class myAsyncTask extends AsyncTask<Void, Void, Document> {
-        final View cont;
-        Boolean allIsOk = true;
-        String url = null;
+    private CompositeDisposable setModule(Context context, String url, WebView browser) {
+        CompositeDisposable disposables = new CompositeDisposable();
+        Observable.fromCallable((Callable<Document>) () -> {
+            return Jsoup.connect(url).get();
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Document>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposables.add(d);
+                    }
 
-        myAsyncTask(View context, String url) {
-            cont = context;
-            this.url = url;
+                    @Override
+                    public void onNext(Document doc) {
+                        doc.getElementsByClass("navbar navbar-default navbar-fixed-top").remove();
+                        doc.getElementsByClass("_client_components_Sceleton__footer").remove();
+                        doc.getElementsByClass("breadcrumb").remove();
+                        browser.setWebViewClient(new UrlInterceptor(context));
+                        browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+                        browser.loadDataWithBaseURL(url, doc.toString(), "text/html", "utf-8", "");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.getCause();
+                        Toast.makeText(context, "Нет подключения к интернету+СОСАТЬ", Toast.LENGTH_SHORT).show();
+                        ((FragmentActivity) context).onBackPressed();
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+        return disposables;
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (disposables != null) {
+            disposables.dispose();
         }
-
-        @Override
-        protected Document doInBackground(Void... voids) {
-            Document doc = null;
-            try {
-                doc = Jsoup.connect(url).get();
-                doc.getElementsByClass("navbar navbar-default navbar-fixed-top").remove();
-                doc.getElementsByClass("_client_components_Sceleton__footer").remove();
-                doc.getElementsByClass("breadcrumb").remove();
-            } catch (IOException e) {
-                allIsOk = false;
-            }
-
-            return doc;
-        }
-
-        @Override
-        protected void onPostExecute(Document document) {
-            super.onPostExecute(document);
-            if (allIsOk) {
-                final WebView browser = cont.findViewById(R.id.browser);
-                browser.loadDataWithBaseURL(url, document.toString(), "text/html", "utf-8", "");
-                browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-            } else
-                Toast.makeText(cont.getContext(), "Нет подключения к интернету", Toast.LENGTH_SHORT).show();
-        }
+        super.onDestroyView();
     }
 }
