@@ -103,8 +103,8 @@ public class StarterFragment extends Fragment {
         howToStart.setMovementMethod(LinkMovementMethod.getInstance());
         TextView faq = (TextView) view.findViewById(R.id.tv_links);
         faq.setMovementMethod(LinkMovementMethod.getInstance());
-        CoolSpannableString coolSpannableStringForFullFaq = new CoolSpannableString("0", getString(R.string.full_faq), getActivity());
-        CoolSpannableString coolSpannableStringForPupilsFaq = new CoolSpannableString("module-20927_5", getString(R.string.full_faq_for_pupils), getActivity());
+        CoolSpannableString coolSpannableStringForFullFaq = new CoolSpannableString("https://algoprog.ru/material/0", getString(R.string.full_faq), getActivity());
+        CoolSpannableString coolSpannableStringForPupilsFaq = new CoolSpannableString("https://algoprog.ru/material/module-20927_5", getString(R.string.full_faq_for_pupils), getActivity());
         ssForLinks[0] = TextUtils.concat(coolSpannableStringForFullFaq.getString(), "| ", coolSpannableStringForPupilsFaq.getString());
         faq.setText(ssForLinks[0]);
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -124,34 +124,28 @@ public class StarterFragment extends Fragment {
         };
         SpannableString coolSpannableStringForReg = new SpannableString(getString(R.string.req));
         coolSpannableStringForReg.setSpan(clickableSpan, 0, getString(R.string.req).length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        CoolSpannableString coolSpannableStringForAboutCourse = new CoolSpannableString("0", getString(R.string.about_course), getActivity());
+        CoolSpannableString coolSpannableStringForAboutCourse = new CoolSpannableString("https://algoprog.ru/material/0", getString(R.string.about_course), getActivity());
         ssForReqAndCourse[0] = TextUtils.concat(coolSpannableStringForReg, " ", getString(R.string.our_bible), " ", coolSpannableStringForAboutCourse.getString(), ").");
         howToStart.setText(ssForReqAndCourse[0]);
-        CoolSpannableString coolSpannableStringForPayment = new CoolSpannableString("pay", getString(R.string.payment), getActivity());
+        CoolSpannableString coolSpannableStringForPayment = new CoolSpannableString("https://algoprog.ru/material/pay", getString(R.string.payment), getActivity());
         final SpannableString payment = coolSpannableStringForPayment.getString();
         final Button hiIAmPupil = (Button) view.findViewById(R.id.b_i_am_pupil);
         final Button hiIAmStudent = (Button) view.findViewById(R.id.b_i_am_student);
-        hiIAmPupil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hiIAmPupil.setBackgroundColor(Color.RED);
-                hiIAmPupil.setTextColor(Color.WHITE);
-                hiIAmStudent.setBackgroundColor(Color.WHITE);
-                hiIAmStudent.setTextColor(getResources().getColor(R.color.colorForMainText));
-                ssForFullFaq[0] = TextUtils.concat(getString(R.string.hello_i_am_pupil), payment, ".");
-                forPupils.setText(ssForFullFaq[0]);
-            }
+        hiIAmPupil.setOnClickListener(v -> {
+            hiIAmPupil.setBackgroundColor(Color.RED);
+            hiIAmPupil.setTextColor(Color.WHITE);
+            hiIAmStudent.setBackgroundColor(Color.WHITE);
+            hiIAmStudent.setTextColor(getResources().getColor(R.color.colorForMainText));
+            ssForFullFaq[0] = TextUtils.concat(getString(R.string.hello_i_am_pupil), payment, ".");
+            forPupils.setText(ssForFullFaq[0]);
         });
-        hiIAmStudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hiIAmStudent.setBackgroundColor(Color.RED);
-                hiIAmStudent.setTextColor(Color.WHITE);
-                hiIAmPupil.setBackgroundColor(Color.WHITE);
-                hiIAmPupil.setTextColor(getResources().getColor(R.color.colorForMainText));
-                ssForPupils[0] = TextUtils.concat(getString(R.string.hello_i_am_student), payment, ".");
-                forPupils.setText(ssForPupils[0]);
-            }
+        hiIAmStudent.setOnClickListener(v -> {
+            hiIAmStudent.setBackgroundColor(Color.RED);
+            hiIAmStudent.setTextColor(Color.WHITE);
+            hiIAmPupil.setBackgroundColor(Color.WHITE);
+            hiIAmPupil.setTextColor(getResources().getColor(R.color.colorForMainText));
+            ssForPupils[0] = TextUtils.concat(getString(R.string.hello_i_am_student), payment, ".");
+            forPupils.setText(ssForPupils[0]);
         });
         hiIAmPupil.performClick();
         return view;
