@@ -30,12 +30,8 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
-import static com.blighter.algoprog.api.ApiMethods.COOKIES;
-import static com.blighter.algoprog.api.ApiMethods.FIRST_LEVEL_AUTHORIZED;
-import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
-import static com.blighter.algoprog.fragments.LoginFragment.LOGIN;
-import static com.blighter.algoprog.fragments.LoginFragment.PASSWORD;
-import static com.blighter.algoprog.fragments.LoginFragment.SECOND_LEVEL_AUTHORIZED;
+import static com.blighter.algoprog.api.ApiMethods.getBestSolutions;
+import static com.blighter.algoprog.api.ApiMethods.getSolutions;
 
 public class MustToUseMethods {
     private static float[] getHSV(int rating, double activity) {
@@ -64,10 +60,9 @@ public class MustToUseMethods {
                         return null;
                     } else {
                         String[] cookiesAndSomething = cookiesResponse.headers().get("Set-Cookie").split(";");
-                        SharedPreferences sharedPreferences = context.getSharedPreferences("justSomeData", Context.MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString(COOKIES, cookiesAndSomething[0]).apply();
-                        editor.commit();
+                        editor.putString(context.getString(R.string.cookies), cookiesAndSomething[0]).apply();
                         return apiForMyUser.getMyUserInfo(cookiesAndSomething[0]);
                     }
                 })
@@ -81,6 +76,9 @@ public class MustToUseMethods {
 
                     @Override
                     public void onNext(myUser myUserResponse) {
+                        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_preferences),Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(context.getString(R.string.user_id),"").apply();
                         SpannableStringBuilder coolSubtitle = new SpannableStringBuilder();
                         String name = myUserResponse.getName();
                         String rating = myUserResponse.getRating().toString();
@@ -173,17 +171,17 @@ public class MustToUseMethods {
     }
 
     public static CompositeDisposable setNiceTitle(android.support.v7.app.ActionBar actionBar, Context context, NavigationView navigationView) {
-        SharedPreferences sharedPref = context.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        boolean secondLevelAuthorized = sharedPref.getBoolean(SECOND_LEVEL_AUTHORIZED, false);
-        boolean firstLevelAuthorized = sharedPref.getBoolean(FIRST_LEVEL_AUTHORIZED, false);
+        SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
+        boolean secondLevelAuthorized = sharedPref.getBoolean(context.getString(R.string.second_level_authorization), false);
+        boolean firstLevelAuthorized = sharedPref.getBoolean(context.getString(R.string.first_level_authorization), false);
         CompositeDisposable compositeDisposable = new CompositeDisposable();
         if (firstLevelAuthorized) {
-            compositeDisposable = getMyUser(sharedPref.getString(COOKIES, ""), actionBar, context);
+            compositeDisposable = getMyUser(sharedPref.getString(context.getString(R.string.cookies), ""), actionBar, context);
         } else if (secondLevelAuthorized) {
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putBoolean(FIRST_LEVEL_AUTHORIZED, true);
+            editor.putBoolean(context.getString(R.string.first_level_authorization), true);
             editor.apply();
-            compositeDisposable = getCookiesAndMyUser(context, actionBar, new UserData(sharedPref.getString(LOGIN, ""), sharedPref.getString(PASSWORD, "")), navigationView, false);
+            compositeDisposable = getCookiesAndMyUser(context, actionBar, new UserData(sharedPref.getString(context.getString(R.string.login), ""), sharedPref.getString(context.getString(R.string.password), "")), navigationView, false);
         } else
             actionBar.setTitle("Неизвестный пользователь");
         return compositeDisposable;
