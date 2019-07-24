@@ -24,10 +24,6 @@ import io.reactivex.disposables.CompositeDisposable;
 import static com.blighter.algoprog.api.MustToUseMethods.getCookiesAndMyUser;
 
 public class LoginFragment extends Fragment {
-    public static final String SECOND_LEVEL_AUTHORIZED = "second_level_authorization";
-    public static final String PASSWORD = "password";
-    public static final String LOGIN = "login";
-    public static final String APP_PREFERENCES = "justSomeData";
     private CompositeDisposable disposables;
 
 
@@ -36,7 +32,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup
             container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        final Button button = (Button) view.findViewById(R.id.buttonForLogin);
+        final Button button = view.findViewById(R.id.buttonForLogin);
         button.setOnClickListener(v -> {
             EditText loginText = getActivity().findViewById(R.id.login);
             EditText passwordText = getActivity().findViewById(R.id.password);
@@ -51,11 +47,11 @@ public class LoginFragment extends Fragment {
                 disposables = getCookiesAndMyUser(getContext(), ((AppCompatActivity) getActivity()).getSupportActionBar(), user, getActivity().findViewById(R.id.nav_viewInMain), true);
                 CheckBox checkBox = getActivity().findViewById(R.id.cb_for_saving_data);
                 if (checkBox.isChecked()) {
-                    SharedPreferences data = getActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+                    SharedPreferences data = getActivity().getSharedPreferences(getString(R.string.app_preferences), Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = data.edit();
-                    editor.putString(LOGIN, loginText.getText().toString());
-                    editor.putString(PASSWORD, passwordText.getText().toString());
-                    editor.putBoolean(SECOND_LEVEL_AUTHORIZED, true);
+                    editor.putString(getString(R.string.login), loginText.getText().toString());
+                    editor.putString(getString(R.string.password), passwordText.getText().toString());
+                    editor.putBoolean(getString(R.string.second_level_authorization), true);
                     editor.apply();
                 }
             }
