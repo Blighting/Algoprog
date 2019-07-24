@@ -27,11 +27,8 @@ import com.blighter.algoprog.utils.CoolStartANewFragment;
 
 import io.reactivex.disposables.CompositeDisposable;
 
-import static com.blighter.algoprog.api.ApiMethods.COOKIES;
-import static com.blighter.algoprog.api.ApiMethods.FIRST_LEVEL_AUTHORIZED;
 import static com.blighter.algoprog.api.MenuMethods.menuExit;
 import static com.blighter.algoprog.api.MustToUseMethods.setNiceTitle;
-import static com.blighter.algoprog.fragments.LoginFragment.APP_PREFERENCES;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
@@ -45,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_viewInMain);
         navigationView.setNavigationItemSelectedListener(this);
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.app_bar_in_main);
+        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.app_bar_in_main);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
@@ -85,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         } else {
             ActionBar ab = getSupportActionBar();
-            disposables = setNiceTitle(ab, MainActivity.this, findViewById(R.id.nav_viewInMain));
+            disposables = setNiceTitle(ab, MainActivity.this, navigationView);
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             StarterFragment starterFragment = new StarterFragment();
@@ -95,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void addMenuItemInNavMenuDrawer() {
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_viewInMain);
+        NavigationView navView = findViewById(R.id.nav_viewInMain);
         Menu menu = navView.getMenu();
-        SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.app_preferences), Context.MODE_PRIVATE);
         boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
         menu.removeItem(R.id.nav_enter);
         if (authorized) {
@@ -115,11 +112,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onStop() {
-        SharedPreferences sharedPref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         if (sharedPref.getBoolean("authorized", false))
             menuExit(MainActivity.this, getSupportActionBar());
-        editor.remove(COOKIES);
+        editor.remove(getString(R.string.cookies));
         editor.putBoolean("WEHAVECOOKIES", false);
         editor.apply();
         super.onStop();
@@ -229,9 +226,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (disposables != null) {
             disposables.dispose();
         }
-        SharedPreferences sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
         SharedPreferences.Editor edtior = sharedPreferences.edit();
-        edtior.remove(FIRST_LEVEL_AUTHORIZED);
+        edtior.remove(getString(R.string.first_level_authorization));
         edtior.apply();
         super.onDestroy();
     }
