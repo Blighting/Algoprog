@@ -71,6 +71,16 @@
     <string name="text_view_in_navigation_drawer">Algoprog</string>
     <!-- Algoprog menu items -->
 
+    <!-- Shared Preferences keys -->
+    <string name="cookies">cookies</string>
+    <string name="first_level_authorization">first_level_authorization</string>
+    <string name="second_level_authorization">second_level_authorization</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="app_preferences"> justSomeData</string>
+    <string name="user_id">userId</string>
+    <!-- Shared Preferences keys -->
+
     <!-- BestSubmits menu items -->
     <string name="header_in_best_submits">Хорошие решения</string>
     <!-- BestSubmits menu items -->
@@ -82,10 +92,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="action_settings">Settings</string>
     <!--No need in translation strings-->
 
     <!-- TODO: Remove or change this placeholder text -->
