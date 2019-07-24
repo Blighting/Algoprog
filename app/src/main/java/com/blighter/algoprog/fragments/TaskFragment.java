@@ -36,18 +36,17 @@ public class TaskFragment extends Fragment {
         if (bundle != null) {
             id = bundle.getString("idForTask");
         }
-        WebView browser = (WebView) view.findViewById(R.id.wb_for_task);
+        WebView browser = view.findViewById(R.id.wb_for_task);
         browser.setWebViewClient(new UrlInterceptor(getContext()));
         CompositeDisposable compositeDisposable = setTask(id, browser, getContext());
-        TextView tv_informatics = (TextView) view.findViewById(R.id.tv_in_task_informatics);
+        TextView tv_informatics = view.findViewById(R.id.tv_in_task_informatics);
         final String link = "https://informatics.mccme.ru/moodle/mod/statements/view3.php?chapterid=" + id.replace("p", "");
         tv_informatics.setMovementMethod(LinkMovementMethod.getInstance());
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(View view) {
-                String url = link;
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
+                i.setData(Uri.parse(link));
                 startActivity(i);
             }
 
