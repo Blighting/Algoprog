@@ -14,9 +14,7 @@
         <item name="android:background">@color/colorPopup</item>
     </style>
 
-    <style name="TextAppearance">
-        <item name="colorControlHighlight">@color/activated_color</item>
-    </style>
+
 
     <style name="ToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">20sp</item>
@@ -28,13 +26,6 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="CustomToolbarStyle.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
-    <style name="CustomToolbarStyle.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="CustomToolbarStyle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>
