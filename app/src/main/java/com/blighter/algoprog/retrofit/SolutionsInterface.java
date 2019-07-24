@@ -1,13 +1,15 @@
 package com.blighter.algoprog.retrofit;
 
-import com.blighter.algoprog.pojo.Solutions;
+import com.blighter.algoprog.pojo.Solution;
 
-import retrofit2.Call;
+import java.util.List;
+
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Path;
 
 public interface SolutionsInterface {
-    @GET("{task}")
-    Call<Solutions> getSolutions(@Header("Cookie") String cookies, @Path("task") String taskId);
+    @GET("submits/{id}/{task}")
+    Observable<List<Solution>> getSolutions(@Header("Cookie") String cookies, @Path("id") String userId, @Path("task") String taskId);
 }
