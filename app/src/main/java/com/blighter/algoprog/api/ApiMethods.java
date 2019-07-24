@@ -11,11 +11,13 @@ import android.widget.Toast;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.pojo.BestSolution;
+import com.blighter.algoprog.pojo.Solution;
 import com.blighter.algoprog.pojo.Task;
 import com.blighter.algoprog.pojo.me;
 import com.blighter.algoprog.retrofit.BestSolutionsInterface;
 import com.blighter.algoprog.retrofit.Client;
 import com.blighter.algoprog.retrofit.MeInterface;
+import com.blighter.algoprog.retrofit.SolutionsInterface;
 import com.blighter.algoprog.retrofit.TaskInterface;
 import com.mukesh.MarkdownView;
 
@@ -38,8 +40,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class ApiMethods {
-    public static final String COOKIES = "cookies";
-    public static final String FIRST_LEVEL_AUTHORIZED = "first_level_authorization";
 
     public static CompositeDisposable getBestSolutions(String cookies, String taskId, Context context) {
         CompositeDisposable disposables = new CompositeDisposable();
@@ -56,19 +56,19 @@ public class ApiMethods {
                     @Override
                     public void onNext(List<BestSolution> bestSolutions) {
                         Document.OutputSettings settings = new Document.OutputSettings().prettyPrint(false);
-                        String markdownHtml = "";
+                        StringBuilder markdownHtml = new StringBuilder();
                         for (int i = 0; i < bestSolutions.size(); i++) {
-                            markdownHtml = markdownHtml + "\n```" + bestSolutions.get(i).getLanguage().replaceAll("[^a-zA-Z]+", "") + "\n";
-                            markdownHtml = markdownHtml + replaceHtmlTags(bestSolutions.get(i).getSource()) + "\n```\n";
-                            markdownHtml = markdownHtml + "<p>" + bestSolutions.get(i).getLanguage() + "</p>" + "\n<hr></hr>\n";
+                            markdownHtml.append("\n```").append(bestSolutions.get(i).getLanguage().replaceAll("[^a-zA-Z]+", "")).append("\n");
+                            markdownHtml.append(replaceHtmlTags(bestSolutions.get(i).getSource())).append("\n```\n");
+                            markdownHtml.append("<p>").append(bestSolutions.get(i).getLanguage()).append("</p>").append("\n<hr></hr>\n");
                         }
                         String cool = Jsoup.clean(bestSolutions.get(1).getSource(), "", Whitelist.none(), settings);
                         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                         alertDialog.setPositiveButton("Закрыть", (dialog, which) -> {
                         });
                         View mView = ((FragmentActivity) context).getLayoutInflater().inflate(R.layout.alert_dialog_for_best_submits, null);
-                        MarkdownView markdownView = (MarkdownView) mView.findViewById(R.id.markdown_view);
-                        markdownView.setMarkDownText(markdownHtml);
+                        MarkdownView markdownView = mView.findViewById(R.id.markdown_view);
+                        markdownView.setMarkDownText(markdownHtml.toString());
                         alertDialog.setView(mView);
                         AlertDialog alertDialog1 = alertDialog.create();
                         alertDialog1.show();
@@ -106,6 +106,34 @@ public class ApiMethods {
             }
         });
 
+    }
+
+    public static void getSolutions(final String id, String COOKIES, String userId) {
+        SolutionsInterface client = Client.getClient().create(SolutionsInterface.class);
+        client.getSolutions(COOKIES, userId, id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<List<Solution>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(List<Solution> solutions) {
+                        solutions.get(0).getResults();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 
 
