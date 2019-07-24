@@ -19,8 +19,6 @@ import com.blighter.algoprog.utils.UrlInterceptor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.util.concurrent.Callable;
-
 import io.reactivex.Observable;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -35,7 +33,7 @@ public class ModuleFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_module, container, false);
-        String url = null;
+        String url;
         Bundle bundle = getArguments();
         if (bundle != null) {
             url = bundle.getString("url");
@@ -49,9 +47,7 @@ public class ModuleFragment extends Fragment {
 
     private CompositeDisposable setModule(Context context, String url, WebView browser) {
         CompositeDisposable disposables = new CompositeDisposable();
-        Observable.fromCallable((Callable<Document>) () -> {
-            return Jsoup.connect(url).get();
-        }).subscribeOn(Schedulers.io())
+        Observable.fromCallable(() -> Jsoup.connect(url).get()).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Document>() {
                     @Override
@@ -72,7 +68,7 @@ public class ModuleFragment extends Fragment {
                     @Override
                     public void onError(Throwable e) {
                         e.getCause();
-                        Toast.makeText(context, "Нет подключения к интернету+СОСАТЬ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Нет подключения к интернету", Toast.LENGTH_SHORT).show();
                         ((FragmentActivity) context).onBackPressed();
                     }
 
