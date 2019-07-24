@@ -47,15 +47,15 @@ public class TaskListsFragment extends Fragment {
                     @Override
                     public void onNext(MaterialsInTaskList materialsInTaskList) {
                         Materials[] materials = materialsInTaskList.getMaterials();
-                        ArrayList<String> titles = new ArrayList<String>();
-                        ArrayList<String> ids = new ArrayList<String>();
+                        ArrayList<String> titles = new ArrayList<>();
+                        ArrayList<String> ids = new ArrayList<>();
                         for (int i = 0; i < materials.length; i++) {
                             titles.add(i, materials[i].getTitle());
                             ids.add(i, materials[i].get_id());
                         }
                         final ArrayAdapter<String> adapter;
                         ListView listView = ((FragmentActivity) context).findViewById(R.id.lv_for_tasks);
-                        adapter = new ArrayAdapter<String>(context,
+                        adapter = new ArrayAdapter<>(context,
                                 R.layout.list_item, R.id.tw_list_item, titles);
                         listView.setAdapter(adapter);
                         listView.setOnItemClickListener((adapterView, view, i, l) -> {
