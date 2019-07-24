@@ -58,7 +58,7 @@ public class UrlInterceptor extends WebViewClient {
         } else {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
-            ((FragmentActivity) context).startActivity(intent);
+            context.startActivity(intent);
             view.reload();
         }
         return super.shouldOverrideUrlLoading(view, url);
