@@ -97,11 +97,11 @@ public class StarterFragment extends Fragment {
                 return null;
             }
         }};
-        final TextView forPupils = (TextView) view.findViewById(R.id.tv_hello_i_am_pupil);
+        final TextView forPupils = view.findViewById(R.id.tv_hello_i_am_pupil);
         forPupils.setMovementMethod(LinkMovementMethod.getInstance());
-        final TextView howToStart = (TextView) view.findViewById(R.id.how_to_start);
+        final TextView howToStart = view.findViewById(R.id.how_to_start);
         howToStart.setMovementMethod(LinkMovementMethod.getInstance());
-        TextView faq = (TextView) view.findViewById(R.id.tv_links);
+        TextView faq = view.findViewById(R.id.tv_links);
         faq.setMovementMethod(LinkMovementMethod.getInstance());
         CoolSpannableString coolSpannableStringForFullFaq = new CoolSpannableString("https://algoprog.ru/material/0", getString(R.string.full_faq), getActivity());
         CoolSpannableString coolSpannableStringForPupilsFaq = new CoolSpannableString("https://algoprog.ru/material/module-20927_5", getString(R.string.full_faq_for_pupils), getActivity());
@@ -129,8 +129,8 @@ public class StarterFragment extends Fragment {
         howToStart.setText(ssForReqAndCourse[0]);
         CoolSpannableString coolSpannableStringForPayment = new CoolSpannableString("https://algoprog.ru/material/pay", getString(R.string.payment), getActivity());
         final SpannableString payment = coolSpannableStringForPayment.getString();
-        final Button hiIAmPupil = (Button) view.findViewById(R.id.b_i_am_pupil);
-        final Button hiIAmStudent = (Button) view.findViewById(R.id.b_i_am_student);
+        final Button hiIAmPupil = view.findViewById(R.id.b_i_am_pupil);
+        final Button hiIAmStudent = view.findViewById(R.id.b_i_am_student);
         hiIAmPupil.setOnClickListener(v -> {
             hiIAmPupil.setBackgroundColor(Color.RED);
             hiIAmPupil.setTextColor(Color.WHITE);
