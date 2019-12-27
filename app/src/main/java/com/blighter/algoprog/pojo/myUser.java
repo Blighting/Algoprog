@@ -1,5 +1,7 @@
 package com.blighter.algoprog.pojo;
 
+import java.util.ArrayList;
+
 public class myUser {
     Level level;
     String _id;
@@ -9,7 +11,11 @@ public class myUser {
     Double activity;
     Double ratingSort;
     Boolean active;
+    ArrayList<String> achieves;
 
+    public ArrayList<String> getAchieves() {
+        return achieves;
+    }
 
     public String getName() {
         return name;
@@ -31,6 +37,10 @@ public class myUser {
         return level;
     }
 
+    public String get_id() {
+        return _id;
+    }
+
     public class Level {
         String current;
         String start;
@@ -43,5 +53,4 @@ public class myUser {
             return start;
         }
     }
-
 }
