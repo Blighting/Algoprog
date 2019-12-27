@@ -3,11 +3,12 @@ package com.blighter.algoprog.api;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.pojo.BestSolution;
