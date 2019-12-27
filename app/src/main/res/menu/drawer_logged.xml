@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_menu_help_black_24dp"
+            android:orderInCategory="0"
+            android:title="@string/FAQ" />
+        <item
+            android:id="@+id/nav_news"
+            android:icon="@drawable/ic_menu_inbox_black_24dp"
+            android:orderInCategory="0"
+            android:title="@string/news" />
+    </group>
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_level_1"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_1" />
+        <item
+            android:id="@+id/nav_level_2"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_2" />
+        <item
+            android:id="@+id/nav_level_3"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_3" />
+        <item
+            android:id="@+id/nav_level_4"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_4" />
+        <item
+            android:id="@+id/nav_level_5"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_5" />
+        <item
+            android:id="@+id/nav_level_6"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_6" />
+        <item
+            android:id="@+id/nav_level_7"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_7" />
+        <item
+            android:id="@+id/nav_level_8"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_8" />
+        <item
+            android:id="@+id/nav_level_9"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_9" />
+        <item
+            android:id="@+id/nav_level_10"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/Level_10" />
+
+    </group>
+    <group
+        android:id="@+id/settings_and_enter"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_change_user"
+            android:icon="@drawable/ic_menu_import_export_black"
+            android:orderInCategory="2"
+            android:title="@string/change_user"
+            ></item>
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_menu_export_black"
+            android:orderInCategory="2"
+            android:title="@string/exit" />
+    </group>
+
+</menu>
