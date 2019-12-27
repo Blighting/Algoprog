@@ -1,0 +1,2940 @@
+[
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272493p255",
+    "results": {
+      "tests": {
+        "1": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "2": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "3": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "4": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "5": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "6": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "7": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "8": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "9": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "10": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "11": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "12": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 25,
+          "status": "WA"
+        },
+        "13": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "14": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "15": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "16": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "17": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "18": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 25,
+          "status": "WA"
+        },
+        "19": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "20": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "21": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "22": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 26,
+          "status": "OK"
+        },
+        "23": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "24": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 25,
+          "real_time": 26,
+          "status": "OK"
+        },
+        "25": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 25,
+          "real_time": 27,
+          "status": "OK"
+        },
+        "26": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 25,
+          "real_time": 26,
+          "status": "WA"
+        },
+        "27": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 25,
+          "real_time": 26,
+          "status": "OK"
+        },
+        "28": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "29": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 26,
+          "status": "OK"
+        },
+        "30": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "31": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 25,
+          "real_time": 26,
+          "status": "OK"
+        },
+        "32": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 24,
+          "real_time": 25,
+          "status": "WA"
+        },
+        "33": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "34": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "35": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "36": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "37": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 24,
+          "status": "OK"
+        },
+        "38": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "39": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 23,
+          "real_time": 24,
+          "status": "WA"
+        },
+        "40": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "time": 24,
+          "real_time": 25,
+          "status": "WA"
+        },
+        "41": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "42": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "43": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 24,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "44": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 23,
+          "real_time": 25,
+          "status": "OK"
+        },
+        "45": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "time": 22,
+          "real_time": 24,
+          "status": "OK"
+        }
+      },
+      "host": "vm-01-04",
+      "compiler_output": ""
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif x2-x1==y2-y1:\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:32:43.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272496p255",
+    "results": {
+      "tests": {
+        "1": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "2": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "3": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "4": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "5": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "6": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "7": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "8": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "9": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "10": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        },
+        "11": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "12": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "13": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "14": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "15": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "16": {
+          "string_status": "Неправильный ответ",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "17": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "18": {
+          "string_status": "Неправильный ответ",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "WA"
+        },
+        "19": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "20": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "21": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "22": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "23": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        },
+        "24": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        },
+        "25": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "26": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "27": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "28": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "29": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "30": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        },
+        "31": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "32": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "33": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "34": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "35": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "36": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "37": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "38": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "39": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "40": {
+          "string_status": "Неправильный ответ",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "WA"
+        },
+        "41": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        },
+        "42": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "43": {
+          "string_status": "OK",
+          "time": 27,
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "status": "OK"
+        },
+        "44": {
+          "string_status": "Неправильный ответ",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "WA"
+        },
+        "45": {
+          "string_status": "OK",
+          "time": 26,
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "status": "OK"
+        }
+      },
+      "host": "vm-02-03",
+      "compiler_output": ""
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif (x2-x1==y2-y1) or (x2+x1 == y1+y2):\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:41:09.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272499p255",
+    "results": {
+      "compiler_output": "",
+      "tests": {
+        "1": {
+          "time": 26,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 28
+        },
+        "2": {
+          "time": 23,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 25
+        },
+        "3": {
+          "time": 22,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 24
+        },
+        "4": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25
+        },
+        "5": {
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 24
+        },
+        "6": {
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 24
+        },
+        "7": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "8": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27
+        },
+        "9": {
+          "time": 26,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 29
+        },
+        "10": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25
+        },
+        "11": {
+          "time": 23,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 24
+        },
+        "12": {
+          "time": 23,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 24
+        },
+        "13": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25
+        },
+        "14": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "15": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "16": {
+          "time": 24,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26
+        },
+        "17": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "18": {
+          "time": 24,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26
+        },
+        "19": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "20": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "21": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "22": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "23": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "24": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "25": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "26": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "27": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "28": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "29": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "30": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "31": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27
+        },
+        "32": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "33": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27
+        },
+        "34": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "35": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "36": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "37": {
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "38": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "39": {
+          "time": 24,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26
+        },
+        "40": {
+          "time": 24,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 25
+        },
+        "41": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26
+        },
+        "42": {
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25
+        },
+        "43": {
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 24
+        },
+        "44": {
+          "time": 24,
+          "status": "WA",
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26
+        },
+        "45": {
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27
+        }
+      },
+      "host": "vm-01-04"
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif (x1+x2)/(y1+y2)==1 :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:47:12.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272500p255",
+    "results": {
+      "compiler_output": "",
+      "host": "vm-02-04",
+      "tests": {
+        "1": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "2": {
+          "time": 27,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "3": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "4": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "5": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "6": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "7": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "8": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "9": {
+          "time": 27,
+          "string_status": "Неправильный ответ",
+          "real_time": 29,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "10": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "11": {
+          "time": 27,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "12": {
+          "time": 26,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "13": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "14": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "15": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "16": {
+          "time": 27,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "17": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "18": {
+          "time": 26,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "19": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "20": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "21": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "22": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "23": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "24": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "25": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "26": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "27": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "28": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "29": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "30": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "31": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "32": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "33": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "34": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "35": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "36": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "37": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "38": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "39": {
+          "time": 26,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "40": {
+          "time": 26,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "41": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "42": {
+          "time": 26,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "43": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        },
+        "44": {
+          "time": 27,
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "WA"
+        },
+        "45": {
+          "time": 27,
+          "string_status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968",
+          "status": "OK"
+        }
+      }
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif abs(x1+x2)/abs(y1+y2)==1 :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:48:46.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272502p255",
+    "results": {
+      "compiler_output": "",
+      "host": "vm-02-05",
+      "tests": {
+        "1": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "2": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "3": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 124,
+          "status": "RT",
+          "real_time": 128,
+          "max_memory_used": "17408000"
+        },
+        "4": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "5": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968"
+        },
+        "6": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "7": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968"
+        },
+        "8": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "9": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "10": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "11": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "12": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "13": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "14": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "15": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 123,
+          "status": "RT",
+          "real_time": 127,
+          "max_memory_used": "17408000"
+        },
+        "16": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "17": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "18": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "19": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968"
+        },
+        "20": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 123,
+          "status": "RT",
+          "real_time": 128,
+          "max_memory_used": "17408000"
+        },
+        "21": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "22": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "23": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 29,
+          "max_memory_used": "339968"
+        },
+        "24": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 122,
+          "status": "RT",
+          "real_time": 127,
+          "max_memory_used": "17408000"
+        },
+        "25": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 124,
+          "status": "RT",
+          "real_time": 128,
+          "max_memory_used": "17408000"
+        },
+        "26": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "27": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "28": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "29": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "30": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 124,
+          "status": "RT",
+          "real_time": 129,
+          "max_memory_used": "17408000"
+        },
+        "31": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 123,
+          "status": "RT",
+          "real_time": 127,
+          "max_memory_used": "17408000"
+        },
+        "32": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "33": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "34": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "35": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "36": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 124,
+          "status": "RT",
+          "real_time": 129,
+          "max_memory_used": "17408000"
+        },
+        "37": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 27,
+          "max_memory_used": "339968"
+        },
+        "38": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "39": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "40": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "41": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "42": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "43": {
+          "string_status": "Ошибка во время выполнения программы",
+          "time": 124,
+          "status": "RT",
+          "real_time": 128,
+          "max_memory_used": "17408000"
+        },
+        "44": {
+          "string_status": "OK",
+          "time": 26,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        },
+        "45": {
+          "string_status": "OK",
+          "time": 27,
+          "status": "OK",
+          "real_time": 28,
+          "max_memory_used": "339968"
+        }
+      }
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif abs(x2-x1)/abs(y2-y1)==1 :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:51:19.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [
+      "Можно проще, без двух срвнений\nПодсказка: abs"
+    ],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272505p255",
+    "results": {
+      "tests": {
+        "1": {
+          "string_status": "OK",
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "2": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "3": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "4": {
+          "string_status": "OK",
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 27
+        },
+        "5": {
+          "string_status": "OK",
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "6": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "7": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "8": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "9": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "10": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "11": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "12": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "13": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "14": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "15": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "16": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "17": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "18": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "19": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "20": {
+          "string_status": "OK",
+          "time": 22,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "21": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "22": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "23": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "24": {
+          "string_status": "OK",
+          "time": 22,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "25": {
+          "string_status": "OK",
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 27
+        },
+        "26": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "27": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "28": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "29": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "30": {
+          "string_status": "OK",
+          "time": 25,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "31": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "32": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "33": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "34": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "35": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 26
+        },
+        "36": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "37": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "38": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "39": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "40": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "41": {
+          "string_status": "OK",
+          "time": 24,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "42": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "43": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 25
+        },
+        "44": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        },
+        "45": {
+          "string_status": "OK",
+          "time": 23,
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 24
+        }
+      },
+      "compiler_output": "",
+      "host": "vm-01-04"
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif (x1+y1==x2+y2) or (x1-y1==x2-y2) :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T16:56:27.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "IG",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": false,
+    "quality": 0,
+    "_id": "2089r272533p255",
+    "results": {
+      "compiler_output": "",
+      "host": "vm-01-04",
+      "tests": {
+        "1": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "2": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 28,
+          "time": 26,
+          "status": "WA"
+        },
+        "3": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 28,
+          "time": 26,
+          "status": "OK"
+        },
+        "4": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "5": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "6": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "7": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "8": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 24,
+          "status": "OK"
+        },
+        "9": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 25,
+          "time": 24,
+          "status": "WA"
+        },
+        "10": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "11": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26,
+          "time": 25,
+          "status": "WA"
+        },
+        "12": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26,
+          "time": 25,
+          "status": "WA"
+        },
+        "13": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 24,
+          "status": "OK"
+        },
+        "14": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "15": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "16": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 27,
+          "time": 25,
+          "status": "WA"
+        },
+        "17": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "18": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 25,
+          "time": 24,
+          "status": "WA"
+        },
+        "19": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 23,
+          "status": "OK"
+        },
+        "20": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "21": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "22": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "23": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 24,
+          "status": "OK"
+        },
+        "24": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 23,
+          "status": "OK"
+        },
+        "25": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 25,
+          "status": "OK"
+        },
+        "26": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "27": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "28": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "29": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 24,
+          "time": 23,
+          "status": "OK"
+        },
+        "30": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 23,
+          "status": "OK"
+        },
+        "31": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "32": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "33": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "34": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 24,
+          "status": "OK"
+        },
+        "35": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "36": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 28,
+          "time": 27,
+          "status": "OK"
+        },
+        "37": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "38": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 26,
+          "time": 25,
+          "status": "OK"
+        },
+        "39": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 27,
+          "time": 25,
+          "status": "WA"
+        },
+        "40": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 26,
+          "time": 24,
+          "status": "WA"
+        },
+        "41": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 26,
+          "status": "OK"
+        },
+        "42": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 25,
+          "time": 24,
+          "status": "OK"
+        },
+        "43": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 28,
+          "time": 26,
+          "status": "OK"
+        },
+        "44": {
+          "max_memory_used": "339968",
+          "string_status": "Неправильный ответ",
+          "real_time": 27,
+          "time": 26,
+          "status": "WA"
+        },
+        "45": {
+          "max_memory_used": "339968",
+          "string_status": "OK",
+          "real_time": 27,
+          "time": 25,
+          "status": "OK"
+        }
+      }
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif  abs(x1-y1)==abs(x2-y2) :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-03-30T17:46:50.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "Частичное решение",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  },
+  {
+    "downloadTime": "1970-01-01T00:00:00.000Z",
+    "comments": [],
+    "force": true,
+    "quality": 0,
+    "_id": "2089r273239p255",
+    "results": {
+      "host": "vm-02-03",
+      "tests": {
+        "1": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "2": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "3": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "4": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "5": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "string_status": "OK",
+          "time": 26
+        },
+        "6": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "7": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "8": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 27,
+          "string_status": "OK",
+          "time": 26
+        },
+        "9": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "10": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "11": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "12": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "13": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "14": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "15": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "16": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "17": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "18": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "19": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "20": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "21": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "22": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "23": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "24": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "25": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "26": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "27": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "28": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "29": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "30": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "31": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "32": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "33": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "34": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "35": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "36": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "37": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "38": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "39": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "40": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 26
+        },
+        "41": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "42": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "43": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        },
+        "44": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 29,
+          "string_status": "OK",
+          "time": 27
+        },
+        "45": {
+          "status": "OK",
+          "max_memory_used": "339968",
+          "real_time": 28,
+          "string_status": "OK",
+          "time": 27
+        }
+      },
+      "compiler_output": ""
+    },
+    "source": "x1 = int(input())\ny1 = int(input())\nx2 = int(input())\ny2 = int(input())\nif  abs(x2 - x1) == abs(y2 - y1) :\n    print(\"YES\")\nelse:\n    print(\"NO\")",
+    "time": "2018-04-02T19:07:37.000Z",
+    "user": "344557",
+    "problem": "p255",
+    "outcome": "AC",
+    "language": "Python 3.6.4",
+    "fullUser": {
+      "level": {
+        "current": "2А",
+        "start": "1А"
+      },
+      "byWeek": {
+        "solved": {
+          "27": 1
+        }
+      },
+      "chocos": [
+        4,
+        1,
+        0
+      ],
+      "_id": "344557",
+      "name": "Евгений Юрин",
+      "userList": "zaoch",
+      "rating": 310,
+      "activity": 0.2833543547794332,
+      "ratingSort": 310.122482439444,
+      "active": true
+    },
+    "fullProblem": {
+      "tables": [
+        "1В: Продвинутые задачи на условный оператор: в них запрещено пользоваться циклами и массивами"
+      ],
+      "_id": "p255",
+      "letter": "B",
+      "name": "Слон",
+      "__v": 0,
+      "level": "1В"
+    }
+  }
+]

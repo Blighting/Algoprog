@@ -11,6 +11,7 @@ public class BestSolution {
     private String user;
     private String time;
 
+
     public Integer getQuality() {
         return quality;
     }

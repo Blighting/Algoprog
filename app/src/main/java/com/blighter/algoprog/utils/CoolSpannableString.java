@@ -1,11 +1,12 @@
 package com.blighter.algoprog.utils;
 
-import android.support.v4.app.FragmentActivity;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.ModuleFragment;

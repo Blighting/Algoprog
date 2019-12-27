@@ -5,17 +5,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.LoginFragment;
@@ -24,6 +24,7 @@ import com.blighter.algoprog.fragments.StarterFragment;
 import com.blighter.algoprog.fragments.TaskFragment;
 import com.blighter.algoprog.fragments.TaskListsFragment;
 import com.blighter.algoprog.utils.CoolStartANewFragment;
+import com.google.android.material.navigation.NavigationView;
 
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -42,12 +43,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_viewInMain);
         navigationView.setNavigationItemSelectedListener(this);
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        android.support.v7.widget.Toolbar toolbar = findViewById(R.id.app_bar_in_main);
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.app_bar_in_main);
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         addMenuItemInNavMenuDrawer();
+        ActionBar ab = getSupportActionBar();
+        disposables = setNiceTitle(ab, MainActivity.this, navigationView);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        StarterFragment starterFragment = new StarterFragment();
+        fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
+        fragmentTransaction.commit();
         if (intent != null && intent.getData() != null) {
             Uri uri = intent.getData();
             String url = uri.toString();
@@ -57,8 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 bundle.putString("idForTask", id);
                 TaskFragment taskFragment = new TaskFragment();
                 taskFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, taskFragment);
                 fragmentTransaction1.commit();
             } else if (url.length() == 34) {
@@ -66,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 bundle.putString("idForTaskList", id);
                 TaskListsFragment taskListFragment = new TaskListsFragment();
                 taskListFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, taskListFragment);
                 fragmentTransaction1.commit();
             } else {
@@ -75,19 +83,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 bundle.putString("url", url);
                 ModuleFragment moduleFragment = new ModuleFragment();
                 moduleFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
                 fragmentTransaction1.commit();
             }
-        } else {
-            ActionBar ab = getSupportActionBar();
-            disposables = setNiceTitle(ab, MainActivity.this, navigationView);
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            StarterFragment starterFragment = new StarterFragment();
-            fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
-            fragmentTransaction.commit();
         }
     }
 
@@ -98,28 +98,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         boolean authorized = sharedPref.getBoolean("WEHAVECOOKIES", false);
         menu.removeItem(R.id.nav_enter);
         if (authorized) {
-            menu.add(R.id.settings_and_enter, R.id.nav_enter + 200, 2, R.string.change_user).setIcon(R.drawable.ic_menu_import_export_black);
-            menu.add(R.id.settings_and_enter, R.id.nav_enter + 100, 2, R.string.exit).setIcon(R.drawable.ic_menu_export_black);
-            menu.removeItem(R.id.nav_enter);
+            menu.clear();
+            navView.inflateMenu(R.menu.drawer_logged);
         } else {
-            menu.removeItem(R.id.nav_enter + 200);
-            menu.removeItem(R.id.nav_enter + 100);
-            menu.add(R.id.settings_and_enter, R.id.nav_enter, 2, R.string.enter_in_Menu).setIcon(R.drawable.ic_menu_import_black);
+            menu.clear();
+            navView.inflateMenu(R.menu.drawer_login);
         }
-
         navView.invalidate();
-    }
-
-    @Override
-    protected void onStop() {
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        if (sharedPref.getBoolean("authorized", false))
-            menuExit(MainActivity.this, getSupportActionBar());
-        editor.remove(getString(R.string.cookies));
-        editor.putBoolean("WEHAVECOOKIES", false);
-        editor.apply();
-        super.onStop();
     }
 
     @Override
@@ -202,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
-            case R.id.nav_enter + 200:
+            case R.id.nav_change_user:
                 menuExit(this, getSupportActionBar());
                 addMenuItemInNavMenuDrawer();
                 FragmentManager fragmentManagerAfterExit = getSupportFragmentManager();
@@ -212,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransactionAfterExit.addToBackStack(null);
                 fragmentTransactionAfterExit.commit();
                 break;
-            case R.id.nav_enter + 100:
+            case R.id.nav_exit:
                 menuExit(this, getSupportActionBar());
                 addMenuItemInNavMenuDrawer();
                 break;
@@ -222,14 +207,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    protected void onRestart() {
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
+        boolean second_level = sharedPreferences.getBoolean(getString(R.string.second_level_authorization), false);
+        if (second_level) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(getString(R.string.first_level_authorization), true);
+            editor.apply();
+        }
+        super.onRestart();
+    }
+
+    @Override
+    protected void onStop() {
+        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
+        boolean first_level = sharedPreferences.getBoolean(getString(R.string.first_level_authorization), false);
+        if (first_level) {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(getString(R.string.first_level_authorization), false);
+            editor.putBoolean(getString(R.string.second_level_authorization), true);
+            editor.apply();
+        }
+        super.onStop();
+    }
+
+    @Override
     protected void onDestroy() {
         if (disposables != null) {
             disposables.dispose();
         }
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
-        SharedPreferences.Editor edtior = sharedPreferences.edit();
-        edtior.remove(getString(R.string.first_level_authorization));
-        edtior.apply();
         super.onDestroy();
     }
 }
