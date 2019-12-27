@@ -17,7 +17,7 @@
         android:layout_height="50dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/logo_a" />
+        app:srcCompat="@drawable/god" />
 
     <TextView
         android:layout_width="wrap_content"

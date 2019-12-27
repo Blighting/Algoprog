@@ -1,9 +1,8 @@
 package com.blighter.algoprog.utils;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.ModuleFragment;

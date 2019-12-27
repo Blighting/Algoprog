@@ -3,6 +3,10 @@ package com.blighter.algoprog.fragments;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +15,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.pojo.UserData;
@@ -37,8 +36,6 @@ public class LoginFragment extends Fragment {
         button.setOnClickListener(v -> {
             EditText loginText = getActivity().findViewById(R.id.login);
             EditText passwordText = getActivity().findViewById(R.id.password);
-            loginText.setText("mousedead");
-            passwordText.setText("89374341400Q");
             if (loginText.getText().toString().equals(""))
                 Toast.makeText(getActivity(), "Введите ваш логин", Toast.LENGTH_SHORT).show();
             else if (passwordText.getText().toString().equals(""))
@@ -54,7 +51,7 @@ public class LoginFragment extends Fragment {
                     SharedPreferences.Editor editor = data.edit();
                     editor.putString(getString(R.string.login), loginText.getText().toString());
                     editor.putString(getString(R.string.password), passwordText.getText().toString());
-                    editor.putBoolean(getString(R.string.first_level_authorization), true);
+                    editor.putBoolean(getString(R.string.second_level_authorization), true);
                     editor.apply();
                 }
             }

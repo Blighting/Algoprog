@@ -4,7 +4,7 @@ public class Cookies {
     private static Boolean cookies;
 
     public Cookies(Boolean cookies) {
-        Cookies.cookies = cookies;
+        this.cookies = cookies;
     }
 
     public Boolean getCookies() {
