@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.ModuleFragment;
@@ -29,8 +32,8 @@ public class UrlInterceptor extends WebViewClient {
                 bundle.putString("idForTask", id);
                 TaskFragment taskFragment = new TaskFragment();
                 taskFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, taskFragment);
                 fragmentTransaction1.addToBackStack(null);
                 fragmentTransaction1.commit();
@@ -39,8 +42,8 @@ public class UrlInterceptor extends WebViewClient {
                 bundle.putString("idForTaskList", id);
                 TaskListsFragment taskListFragment = new TaskListsFragment();
                 taskListFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, taskListFragment);
                 fragmentTransaction1.addToBackStack(null);
                 fragmentTransaction1.commit();
@@ -49,8 +52,8 @@ public class UrlInterceptor extends WebViewClient {
                 bundle.putString("url", url);
                 ModuleFragment moduleFragment = new ModuleFragment();
                 moduleFragment.setArguments(bundle);
-                android.support.v4.app.FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
-                android.support.v4.app.FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                 fragmentTransaction1.replace(R.id.container_in_Main, moduleFragment);
                 fragmentTransaction1.addToBackStack(null);
                 fragmentTransaction1.commit();
