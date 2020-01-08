@@ -24,9 +24,19 @@
             android:layout_marginEnd="0dp"
             android:layout_marginRight="0dp" />
 
-        <TextView
-            android:id="@+id/tv_in_task_informatics"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_informatics"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0"
+            android:text="@string/informatics"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="18sp"
+            app:iconPadding="0dp" />
     </LinearLayout>
+
 </ScrollView>

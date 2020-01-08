@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,11 +30,12 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+//Fragment class which responsible for TaskList
 public class TaskListsFragment extends Fragment {
     private CompositeDisposable disposables;
 
-
-    public static CompositeDisposable getTasksList(String id, Context context) {
+    //getting contest tasks
+    public static CompositeDisposable getTasksList(String id, Context context, TextView title) {
         TaskListInterface taskListInterface = Client.getClient().create(TaskListInterface.class);
         CompositeDisposable disposables = new CompositeDisposable();
         taskListInterface.getTasks(id)
@@ -47,17 +49,17 @@ public class TaskListsFragment extends Fragment {
 
                     @Override
                     public void onNext(MaterialsInTaskList materialsInTaskList) {
+                        title.setText(materialsInTaskList.getTitle());
                         Materials[] materials = materialsInTaskList.getMaterials();
                         ArrayList<String> titles = new ArrayList<>();
                         ArrayList<String> ids = new ArrayList<>();
+                        //building arrays with task's titles and ids
                         for (int i = 0; i < materials.length; i++) {
                             titles.add(i, materials[i].getTitle());
                             ids.add(i, materials[i].get_id());
                         }
-                        final ArrayAdapter<String> adapter;
                         ListView listView = ((FragmentActivity) context).findViewById(R.id.lv_for_tasks);
-                        adapter = new ArrayAdapter<>(context,
-                                R.layout.list_item, R.id.tw_list_item, titles);
+                        TaskAdapter adapter = new TaskAdapter(context, titles);
                         listView.setAdapter(adapter);
                         listView.setOnItemClickListener((adapterView, view, i, l) -> {
                                     Bundle bundle = new Bundle();
@@ -96,7 +98,8 @@ public class TaskListsFragment extends Fragment {
         if (bundle != null) {
             id = bundle.getString("idForTaskList");
         }
-        disposables = getTasksList(id, getContext());
+        TextView textView = view.findViewById(R.id.tw_task_list_title);
+        disposables = getTasksList(id, getContext(), textView);
         return view;
     }
 
@@ -106,5 +109,28 @@ public class TaskListsFragment extends Fragment {
             disposables.dispose();
         }
         super.onDestroyView();
+    }
+
+    //customAdapter for TaskList
+    private static class TaskAdapter extends ArrayAdapter<String> {
+        ArrayList<String> titles;
+        Context context;
+
+        TaskAdapter(@NonNull Context context1, ArrayList<String> titlesList) {
+            super(context1, 0, titlesList);
+            context = context1;
+            titles = titlesList;
+        }
+
+        @NonNull
+        @Override
+        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+            LayoutInflater inflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View rowView = inflater.inflate(R.layout.list_item, parent, false);
+            TextView textView = (TextView) rowView.findViewById(R.id.tw_list_item);
+            textView.setText(titles.get(position));
+            return rowView;
+        }
     }
 }
