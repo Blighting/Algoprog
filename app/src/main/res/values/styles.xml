@@ -2,19 +2,39 @@
 
     <!-- Base application theme. -->
     <!-- Customize your theme here. -->
-    <style name="CustomToolbarStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="elevation">0dp</item>
+    <style name="CustomToolbarStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Algoprog.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.Algoprog.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Algoprog.LargeComponent
+        </item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorPrimary">@color/secondaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorOnBackground">@color/backgroundColor</item>
+    </style>
+
+    <style name="ShapeAppearance.Algoprog.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Algoprog.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="ShapeAppearance.Algoprog.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
     </style>
 
     <style name="themeForAppBar" parent="Theme.AppCompat.Light">
         <item name="android:background">@color/colorPrimary</item>
     </style>
-
-    <style name="CoolTheme" parent="Theme.AppCompat.Light">
-        <item name="android:background">@color/colorPopup</item>
-    </style>
-
-
 
     <style name="ToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textSize">20sp</item>
@@ -26,6 +46,8 @@
         <item name="android:textSize">18sp</item>
     </style>
 
-
+    <style name="TextHintSize" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">14sp</item>
+    </style>
 
 </resources>
