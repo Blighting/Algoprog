@@ -18,9 +18,9 @@
     <string name="change_user">Сменить пользователя</string>
     <!--Menu names-->
     <!--Login screen strings-->
-    <string name="enterText">Вход в систему</string>
-    <string name="usernameInEnter">Имя пользователя</string>
-    <string name="passwordInEnter">Пароль</string>
+    <string name="enterText">Войти</string>
+    <string name="usernameInEnter">ИМЯ ПОЛЬЗОВАТЕЛЯ</string>
+    <string name="passwordInEnter">ПАРОЛЬ</string>
     <string name="loginInEnterScreen">Войти</string>
     <string name="rememberMe">Запомнить меня</string>
     <!--Login fragment strings-->
@@ -73,8 +73,8 @@
 
     <!-- Shared Preferences keys -->
     <string name="cookies">cookies</string>
-    <string name="first_level_authorization">first_level_authorization</string>
-    <string name="second_level_authorization">second_level_authorization</string>
+    <string name="noCookies">noCookies</string>
+    <string name="oldCookies">oldCookies</string>
     <string name="password">password</string>
     <string name="login">login</string>
     <string name="app_preferences"> justSomeData</string>
@@ -86,7 +86,12 @@
     <!-- BestSubmits menu items -->
 
     <!--Task fragment strings-->
-    <string name="infromatics">"Задача на informatics"</string>
+    <string name="submit_result">Результат</string>
+    <string name="submit_time">Время</string>
+    <string name="submit_language">Язык</string>
+    <string name="submit_tests">Тесты</string>
+    <string name="submit_code">Исходный код</string>
+    <string name="informatics">"Задача на informatics"</string>
     <!--Task fragment strings-->
     <!--No need in translation strings-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
