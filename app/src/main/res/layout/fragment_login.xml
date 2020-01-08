@@ -1,114 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/helvetica_neue_cyr_medium"
-        android:lineSpacingMultiplier="1.1"
-        android:text="@string/enterText"
-        android:textColor="@color/colorForMainText"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/helvetica_43"
-        android:lineSpacingMultiplier="1.1"
-        android:text="@string/usernameInEnter"
-        android:textColor="@color/colorForMainText"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/upperGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.28" />
 
-    <EditText
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:ems="10"
-        android:fontFamily="@font/helvetica_neue_cyr_thin"
-        android:inputType="textPersonName"
-        android:lineSpacingMultiplier="1.4"
-        android:textSize="24sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/helvetica_43"
-        android:lineSpacingMultiplier="1.1"
-        android:text="@string/passwordInEnter"
-        android:textColor="@color/colorForMainText"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="10dp"
-        android:ems="10"
-        android:fontFamily="@font/helvetica_neue_cyr_thin"
-        android:inputType="textPassword"
-        android:lineSpacingMultiplier="1.4"
-        android:textSize="24sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <CheckBox
-            android:id="@+id/cb_for_saving_data"
+        <LinearLayout
+            android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="10dp"
-            android:button="@null"
-            android:checked="false"
-            android:drawableEnd="?android:attr/listChoiceIndicatorMultiple"
-            android:fontFamily="@font/helvetica_43"
-            android:lineSpacingMultiplier="1.1"
-            android:text="@string/rememberMe"
-            android:textAlignment="viewEnd"
-            android:gravity="end"
-            android:textAllCaps="false"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="@+id/upperGuideLine">
 
-        <Button
-            android:id="@+id/buttonForLogin"
-            android:layout_width="100dp"
-            android:layout_height="55dp"
-            android:layout_gravity="end"
-            android:layout_marginEnd="15dp"
-            android:background="@android:color/holo_red_light"
-            android:fontFamily="@font/helvetica_neue_cyr_medium"
-            android:lineSpacingMultiplier="1.1"
-            android:text="@string/loginInEnterScreen"
-            android:textColor="@color/colorPopup"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/enterText"
+                android:textAlignment="center"
+                android:textColor="@color/colorForMainText"
+                android:textSize="28sp" />
 
-    </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/loginLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="sans-serif"
+                android:hint="@string/usernameInEnter"
+                android:textColor="@color/colorForMainText"
+                android:textColorHint="@color/secondaryColor"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/TextHintSize">
 
-</LinearLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:fontFamily="sans-serif"
+                android:hint="@string/passwordInEnter"
+                android:textColor="@color/colorForMainText"
+                android:textColorHint="@color/secondaryColor"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/TextHintSize">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textSize="17sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/buttonForLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="15dp"
+        android:elevation="16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/loginInEnterScreen"
+        android:textAlignment="center"
+        android:textColor="@color/colorPopup"
+        android:textSize="18sp"
+        app:background="@android:color/holo_red_light"
+        app:backgroundTint="@android:color/holo_red_light"
+        app:layout_anchor="@+id/frame_layout"
+        app:layout_anchorGravity="bottom|center" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
