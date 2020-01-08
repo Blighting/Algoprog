@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.ModuleFragment;
 
+//Class for SpannableString in startingFragment to write less boilerplate code
 public class CoolSpannableString {
     private final String id;
     private final String text;

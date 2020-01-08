@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 
+//CustomClass for roundSpan used for achievements
 public class RoundedBackgroundSpan extends ReplacementSpan {
 
     private static int CORNER_RADIUS = 16;

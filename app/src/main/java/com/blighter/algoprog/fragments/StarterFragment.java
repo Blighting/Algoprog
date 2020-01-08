@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.utils.CoolSpannableString;
 
+//just a fragment that sets an preset FAQ about Algoprog
 public class StarterFragment extends Fragment {
     @Nullable
     @Override

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.ModuleFragment;
 
+//class for generating boilerplate code for menu items(like levels)
 public class CoolStartANewFragment {
     private final FragmentManager fragmentManager;
     private final ModuleFragment fragment;

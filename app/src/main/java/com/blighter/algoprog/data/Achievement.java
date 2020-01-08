@@ -10,7 +10,7 @@ public class Achievement {
     @NonNull
     @PrimaryKey
     public String _ID;
-    public  String text;
+    public String text;
     public String title;
     public String color;
     public Integer score;

@@ -27,6 +27,7 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+//this fragment shows any module from Algoprog
 public class ModuleFragment extends Fragment {
     CompositeDisposable disposables;
 
@@ -36,6 +37,7 @@ public class ModuleFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_module, container, false);
         String url;
         Bundle bundle = getArguments();
+        //url check, that we got from intent and start setModule()
         if (bundle != null) {
             url = bundle.getString("url");
             setModule(getContext(), url, view.findViewById(R.id.browser));
@@ -58,9 +60,11 @@ public class ModuleFragment extends Fragment {
 
                     @Override
                     public void onNext(Document doc) {
+                        //delete all useless html code
                         doc.getElementsByClass("navbar navbar-default navbar-fixed-top").remove();
                         doc.getElementsByClass("_client_components_Sceleton__footer").remove();
                         doc.getElementsByClass("breadcrumb").remove();
+                        //setting our custom WebViewClient ( class from utils)
                         browser.setWebViewClient(new UrlInterceptor(context));
                         browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
                         browser.loadDataWithBaseURL(url, doc.toString(), "text/html", "utf-8", "");

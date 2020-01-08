@@ -16,6 +16,7 @@ import com.blighter.algoprog.fragments.ModuleFragment;
 import com.blighter.algoprog.fragments.TaskFragment;
 import com.blighter.algoprog.fragments.TaskListsFragment;
 
+//custom WebViewClient so new materials wont trigger Main Activity intent interceptor
 public class UrlInterceptor extends WebViewClient {
     Context context;
 
