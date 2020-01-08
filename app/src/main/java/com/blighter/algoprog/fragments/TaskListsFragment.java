@@ -63,7 +63,7 @@ public class TaskListsFragment extends Fragment {
                         listView.setAdapter(adapter);
                         listView.setOnItemClickListener((adapterView, view, i, l) -> {
                                     Bundle bundle = new Bundle();
-                                    bundle.putString("idForTask", ids.get(i));
+                                    bundle.putString("id", ids.get(i));
                                     TaskFragment taskFragment = new TaskFragment();
                                     taskFragment.setArguments(bundle);
                                     FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();

@@ -32,7 +32,7 @@ public class TaskFragment extends Fragment {
         Bundle bundle = getArguments();
         //getting Task id from bundle
         if (bundle != null) {
-            id = bundle.getString("idForTask");
+            id = bundle.getString("id");
         }
         WebView browser = view.findViewById(R.id.wb_for_task);
         browser.setWebViewClient(new UrlInterceptor(getContext()));

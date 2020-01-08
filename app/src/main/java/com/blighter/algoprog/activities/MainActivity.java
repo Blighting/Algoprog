@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.blighter.algoprog.R;
 import com.blighter.algoprog.fragments.LoginFragment;
 import com.blighter.algoprog.fragments.ModuleFragment;
+import com.blighter.algoprog.fragments.OlympsFragment;
 import com.blighter.algoprog.fragments.StarterFragment;
 import com.blighter.algoprog.fragments.TaskFragment;
 import com.blighter.algoprog.fragments.TaskListsFragment;
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             String id = url.replaceAll("https://algoprog.ru/material/", "");
             if (id.contains("p")) {
                 Bundle bundle = new Bundle();
-                bundle.putString("idForTask", id);
+                bundle.putString("id", id);
                 TaskFragment taskFragment = new TaskFragment();
                 taskFragment.setArguments(bundle);
                 FragmentManager fragmentManager1 = getSupportFragmentManager();
@@ -180,6 +181,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 ModuleFragment moduleFragment10 = new ModuleFragment();
                 CoolStartANewFragment coolStartANewFragment10 = new CoolStartANewFragment(getSupportFragmentManager(), moduleFragment10, getResources().getString(R.string.level_10_url));
                 coolStartANewFragment10.startFragment();
+                break;
+            case R.id.nav_olymps:
+                FragmentManager fragmentManager1 = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                OlympsFragment olympsFragment = new OlympsFragment();
+                fragmentTransaction1.replace(R.id.container_in_Main, olympsFragment);
+                fragmentTransaction1.addToBackStack(null);
+                fragmentTransaction1.commit();
                 break;
             case R.id.nav_enter:
                 FragmentManager fragmentManager = getSupportFragmentManager();

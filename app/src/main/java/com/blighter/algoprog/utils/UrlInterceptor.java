@@ -30,7 +30,7 @@ public class UrlInterceptor extends WebViewClient {
             String id = url.replaceAll("https://algoprog.ru/material/", "");
             if (id.contains("p")) {
                 Bundle bundle = new Bundle();
-                bundle.putString("idForTask", id);
+                bundle.putString("id", id);
                 TaskFragment taskFragment = new TaskFragment();
                 taskFragment.setArguments(bundle);
                 FragmentManager fragmentManager1 = ((FragmentActivity) context).getSupportFragmentManager();
