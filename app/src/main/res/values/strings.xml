@@ -13,6 +13,7 @@
     <string name="Level_8">Уровень 8</string>
     <string name="Level_9">Уровень 9</string>
     <string name="Level_10">Уровень 10</string>
+    <string name="olymps">Задачи из олимпиад</string>
     <string name="enter_in_Menu">Войти</string>
     <string name="exit">Выйти</string>
     <string name="change_user">Сменить пользователя</string>
@@ -99,6 +100,10 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="nav_header_title">Android Studio</string>
     <!--No need in translation strings-->
+    <!--Olymps screen strings-->
+    <string name="olymps_reg">Региональные олимпиады</string>
+    <string name="olymps_roi">Всероссийские олимпиады</string>
+    <!--Olymps screen strings-->
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>
