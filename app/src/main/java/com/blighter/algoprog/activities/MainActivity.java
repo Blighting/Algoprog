@@ -28,8 +28,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import io.reactivex.disposables.CompositeDisposable;
 
+import static com.blighter.algoprog.api.LoginMethods.setNiceTitle;
 import static com.blighter.algoprog.api.MenuMethods.menuExit;
-import static com.blighter.algoprog.api.MustToUseMethods.setNiceTitle;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
@@ -50,12 +50,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         addMenuItemInNavMenuDrawer();
         ActionBar ab = getSupportActionBar();
+        ab.setTitle("Неизвестный Пользователь");
         disposables = setNiceTitle(ab, MainActivity.this, navigationView);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         StarterFragment starterFragment = new StarterFragment();
         fragmentTransaction.replace(R.id.container_in_Main, starterFragment);
         fragmentTransaction.commit();
+        //trying to get intents in case of using app to go through link with algoprog
         if (intent != null && intent.getData() != null) {
             Uri uri = intent.getData();
             String url = uri.toString();
@@ -209,25 +211,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onRestart() {
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
-        boolean second_level = sharedPreferences.getBoolean(getString(R.string.second_level_authorization), false);
-        if (second_level) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(getString(R.string.first_level_authorization), true);
-            editor.apply();
-        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(getString(R.string.oldCookies), true);
+        editor.apply();
         super.onRestart();
     }
 
     @Override
     protected void onStop() {
         SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_preferences), MODE_PRIVATE);
-        boolean first_level = sharedPreferences.getBoolean(getString(R.string.first_level_authorization), false);
-        if (first_level) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(getString(R.string.first_level_authorization), false);
-            editor.putBoolean(getString(R.string.second_level_authorization), true);
-            editor.apply();
-        }
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(getString(R.string.oldCookies), true);
+        editor.apply();
         super.onStop();
     }
 
