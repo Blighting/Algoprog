@@ -13,7 +13,7 @@ import android.util.Pair;
 import android.view.Menu;
 import android.widget.Toast;
 
-import androidx.fragment.app.FragmentActivity;
+import androidx.annotation.Nullable;
 import androidx.room.Room;
 
 import com.blighter.algoprog.R;
@@ -28,6 +28,7 @@ import com.blighter.algoprog.retrofit.Client;
 import com.blighter.algoprog.retrofit.MyUserInterface;
 import com.blighter.algoprog.utils.RoundedBackgroundSpan;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableOnSubscribe;
@@ -40,10 +41,6 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Response;
 
 public class MustToUseMethods {
-    private static final String PARTICIPANT_COLOR = "#997799";
-    private static final String BRONZE_COLOR = "#cd7f32";
-    private static final String SILVER_COLOR = "#b0b7c6";
-    private static final String GOLD_COLOR = "#ffd700";
 
     public static float[] getHSV(int rating, double activity) {
         double R = 160000.0;
@@ -60,7 +57,7 @@ public class MustToUseMethods {
 
     }
 
-    public static CompositeDisposable getCookiesAndMyUser(Context context, final androidx.appcompat.app.ActionBar actionBar, UserData userData, NavigationView navView, Boolean firstTimeLoggingIn) {
+    public static CompositeDisposable getCookiesAndMyUser(Context context, final androidx.appcompat.app.ActionBar actionBar, UserData userData, NavigationView navView, Boolean firstTimeLoggingIn, @Nullable TextInputLayout textInputLayout) {
         AuthorizationInterface apiForCookies = Client.getClient().create(AuthorizationInterface.class);
         MyUserInterface apiForMyUser = Client.getClient().create(MyUserInterface.class);
         CompositeDisposable disposables = new CompositeDisposable();
@@ -114,7 +111,7 @@ public class MustToUseMethods {
                             coolSubtitle.append(" ");
                         }
                         SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
-                        if (sharedPreferences.contains(context.getString(R.string.user_id))) {
+                        if (!sharedPreferences.contains(context.getString(R.string.user_id))) {
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString(context.getString(R.string.user_id), myUserResponse.get_id()).apply();
                         }
@@ -125,12 +122,12 @@ public class MustToUseMethods {
                                         emitter.onNext(titles);
                                         emitter.onComplete();
                                     }
-                                })
-                                .subscribeOn(Schedulers.io())
-                                .observeOn(AndroidSchedulers.mainThread());
+                                });
                         return strings;
                     }
                 })
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Pair<SpannableString, SpannableStringBuilder>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
@@ -139,6 +136,13 @@ public class MustToUseMethods {
 
                     @Override
                     public void onNext(Pair<SpannableString, SpannableStringBuilder> titles) {
+                        SharedPreferences data = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = data.edit();
+                        editor.putString(context.getString(R.string.login), userData.getUsername());
+                        editor.putString(context.getString(R.string.password), userData.getPassword());
+                        editor.putBoolean(context.getString(R.string.oldCookies), false);
+                        editor.putBoolean(context.getString(R.string.noCookies), false);
+                        editor.apply();
                         actionBar.setTitle(titles.first);
                         actionBar.setSubtitle(titles.second);
                         Menu menu = navView.getMenu();
@@ -152,13 +156,17 @@ public class MustToUseMethods {
 
                     @Override
                     public void onError(Throwable e) {
+                        Log.d("сука", e.getMessage());
+                        SharedPreferences data = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = data.edit();
+                        editor.putBoolean(context.getString(R.string.oldCookies), true);
+                        editor.putBoolean(context.getString(R.string.noCookies), true);
+                        editor.apply();
                         if (cookiesOnSuccess[0]) {
-                            Log.d("тест", e.getCause().toString());
-                            Toast.makeText(context, "Неизвестная ошибка", Toast.LENGTH_LONG).show();
+                            textInputLayout.setError("Неизвестная ошибка");
                         } else {
-                            Toast.makeText(context, "Неверный логин или пароль", Toast.LENGTH_LONG).show();
+                            textInputLayout.setError("Неверный логин или пароль");
                         }
-                        ((FragmentActivity) context).onBackPressed();
                     }
 
                     @Override
@@ -174,54 +182,51 @@ public class MustToUseMethods {
         apiForMyUser.getMyUserInfo(cookies)
                 .observeOn(Schedulers.io())
                 .subscribeOn(Schedulers.io())
-                .switchMap(new Function<myUser, Observable<Pair<SpannableString, SpannableStringBuilder>>>() {
-                    @Override
-                    public Observable<Pair<SpannableString, SpannableStringBuilder>> apply(myUser myUserResponse) throws Exception {
-                        SpannableStringBuilder coolSubtitle = new SpannableStringBuilder();
-                        String name = myUserResponse.getName();
-                        String rating = myUserResponse.getRating().toString();
-                        double fullActivity = myUserResponse.getActivity();
-                        int firstPartOfActivity = (int) fullActivity;
-                        int secondPartOfActivity = (int) ((fullActivity * 10) % 10);
-                        String activity = firstPartOfActivity + "." + secondPartOfActivity;
-                        SpannableString coolSubtitlePartOne = new SpannableString(rating);
-                        SpannableString coolSubtitlePartTwo = new SpannableString("/" + activity);
-                        coolSubtitlePartOne.setSpan(new ForegroundColorSpan(Color.HSVToColor(getHSV(myUserResponse.getRating(), myUserResponse.getActivity()))), 0, rating.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        coolSubtitle.append(coolSubtitlePartOne);
-                        coolSubtitlePartTwo.setSpan(new ForegroundColorSpan(Color.BLACK), 0, activity.length() + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-                        coolSubtitle.append(coolSubtitlePartTwo);
+                .switchMap((Function<myUser, Observable<Pair<SpannableString, SpannableStringBuilder>>>) myUserResponse -> {
+                    SpannableStringBuilder coolSubtitle = new SpannableStringBuilder();
+                    String name = myUserResponse.getName();
+                    String rating = myUserResponse.getRating().toString();
+                    double fullActivity = myUserResponse.getActivity();
+                    int firstPartOfActivity = (int) fullActivity;
+                    int secondPartOfActivity = (int) ((fullActivity * 10) % 10);
+                    String activity = firstPartOfActivity + "." + secondPartOfActivity;
+                    SpannableString coolSubtitlePartOne = new SpannableString(rating);
+                    SpannableString coolSubtitlePartTwo = new SpannableString("/" + activity);
+                    coolSubtitlePartOne.setSpan(new ForegroundColorSpan(Color.HSVToColor(getHSV(myUserResponse.getRating(), myUserResponse.getActivity()))), 0, rating.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    coolSubtitle.append(coolSubtitlePartOne);
+                    coolSubtitlePartTwo.setSpan(new ForegroundColorSpan(Color.BLACK), 0, activity.length() + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    coolSubtitle.append(coolSubtitlePartTwo);
+                    coolSubtitle.append(" ");
+                    SpannableString coolTitle = new SpannableString(myUserResponse.getName() + "  " + myUserResponse.getLevel().getCurrent());
+                    coolTitle.setSpan(new ForegroundColorSpan(Color.HSVToColor(getHSV(myUserResponse.getRating(), myUserResponse.getActivity()))), 0, name.length(), 0);
+                    Database db = Room.databaseBuilder(context, Database.class, "achievements.db")
+                            .fallbackToDestructiveMigration()
+                            .createFromAsset("databases/achievements.db")
+                            .build();
+                    AchievementDao dao = db.getDao();
+                    for (int i = 0; i < 3; i++) {
+                        Achievement achievement1 = dao.getById(myUserResponse.getAchieves().get(i));
+                        SpannableString text = new SpannableString(achievement1.getText());
+                        text.setSpan(new RoundedBackgroundSpan(Color.parseColor(achievement1.getColor())), 0, text.length(), 0);
+                        coolSubtitle.append(text);
                         coolSubtitle.append(" ");
-                        SpannableString coolTitle = new SpannableString(myUserResponse.getName() + "  " + myUserResponse.getLevel().getCurrent());
-                        coolTitle.setSpan(new ForegroundColorSpan(Color.HSVToColor(getHSV(myUserResponse.getRating(), myUserResponse.getActivity()))), 0, name.length(), 0);
-                        Database db = Room.databaseBuilder(context, Database.class, "achievements.db")
-                                .fallbackToDestructiveMigration()
-                                .createFromAsset("databases/achievements.db")
-                                .build();
-                        AchievementDao dao = db.getDao();
-                        for (int i = 0; i < 3; i++) {
-                            Achievement achievement1 = dao.getById(myUserResponse.getAchieves().get(i));
-                            SpannableString text = new SpannableString(achievement1.getText());
-                            text.setSpan(new RoundedBackgroundSpan(Color.parseColor(achievement1.getColor())), 0, text.length(), 0);
-                            coolSubtitle.append(text);
-                            coolSubtitle.append(" ");
-                        }
-                        SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
-                        if (sharedPreferences.contains(context.getString(R.string.user_id))) {
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString(context.getString(R.string.user_id), myUserResponse.get_id()).apply();
-                        }
-                        Observable<Pair<SpannableString, SpannableStringBuilder>> strings = Observable
-                                .create((ObservableOnSubscribe<Pair<SpannableString, SpannableStringBuilder>>) emitter -> {
-                                    if (!emitter.isDisposed()) {
-                                        Pair<SpannableString, SpannableStringBuilder> titles = new Pair<>(coolTitle, coolSubtitle);
-                                        emitter.onNext(titles);
-                                        emitter.onComplete();
-                                    }
-                                })
-                                .subscribeOn(Schedulers.io())
-                                .observeOn(AndroidSchedulers.mainThread());
-                        return strings;
                     }
+                    SharedPreferences sharedPreferences = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
+                    if (!sharedPreferences.contains(context.getString(R.string.user_id))) {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(context.getString(R.string.user_id), myUserResponse.get_id()).apply();
+                    }
+                    Observable<Pair<SpannableString, SpannableStringBuilder>> strings = Observable
+                            .create((ObservableOnSubscribe<Pair<SpannableString, SpannableStringBuilder>>) emitter -> {
+                                if (!emitter.isDisposed()) {
+                                    Pair<SpannableString, SpannableStringBuilder> titles = new Pair<>(coolTitle, coolSubtitle);
+                                    emitter.onNext(titles);
+                                    emitter.onComplete();
+                                }
+                            })
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread());
+                    return strings;
                 })
                 .subscribe(new Observer<Pair<SpannableString, SpannableStringBuilder>>() {
                     @Override
@@ -238,7 +243,6 @@ public class MustToUseMethods {
                     @Override
                     public void onError(Throwable e) {
                         Toast.makeText(context, "Неизвестная ошибка при обновление информации о пользователе", Toast.LENGTH_LONG).show();
-                        ((FragmentActivity) context).onBackPressed();
                     }
 
                     @Override
@@ -251,18 +255,21 @@ public class MustToUseMethods {
 
     public static CompositeDisposable setNiceTitle(androidx.appcompat.app.ActionBar actionBar, Context context, NavigationView navigationView) {
         SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
-        boolean secondLevelAuthorized = sharedPref.getBoolean(context.getString(R.string.second_level_authorization), false);
-        boolean firstLevelAuthorized = sharedPref.getBoolean(context.getString(R.string.first_level_authorization), false);
+        boolean noCookies = sharedPref.getBoolean(context.getString(R.string.noCookies), true);
+        boolean oldCookies = sharedPref.getBoolean(context.getString(R.string.oldCookies), true);
         CompositeDisposable compositeDisposable = new CompositeDisposable();
-        if (firstLevelAuthorized) {
-            compositeDisposable = getMyUser(sharedPref.getString(context.getString(R.string.cookies), ""), actionBar, context);
-        } else if (secondLevelAuthorized) {
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putBoolean(context.getString(R.string.first_level_authorization), true);
-            editor.apply();
-            compositeDisposable = getCookiesAndMyUser(context, actionBar, new UserData(sharedPref.getString(context.getString(R.string.login), ""), sharedPref.getString(context.getString(R.string.password), "")), navigationView, false);
-        } else
+        if (!noCookies) {
+            if (!oldCookies) {
+                compositeDisposable = getMyUser(sharedPref.getString(context.getString(R.string.cookies), ""), actionBar, context);
+            } else {
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean(context.getString(R.string.oldCookies), false);
+                editor.apply();
+                compositeDisposable = getCookiesAndMyUser(context, actionBar, new UserData(sharedPref.getString(context.getString(R.string.login), ""), sharedPref.getString(context.getString(R.string.password), "")), navigationView, false, null);
+            }
+        } else {
             actionBar.setTitle("Неизвестный пользователь");
+        }
         return compositeDisposable;
     }
 }
