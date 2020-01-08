@@ -79,8 +79,7 @@
             android:id="@+id/nav_change_user"
             android:icon="@drawable/ic_menu_import_export_black"
             android:orderInCategory="2"
-            android:title="@string/change_user"
-            ></item>
+            android:title="@string/change_user"></item>
         <item
             android:id="@+id/nav_exit"
             android:icon="@drawable/ic_menu_export_black"
