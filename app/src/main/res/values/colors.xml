@@ -7,4 +7,20 @@
     <color name="colorForTextInTasks">#333333</color>
     <color name="backgroundColor">#00ffffff</color>
     <color name="colorForTextWithLink">#d32c2c</color>
+    <color name="primaryColor">#efefef</color>
+
+    <color name="primaryLightColor">#ffffff</color>
+
+    <color name="primaryDarkColor">#bdbdbd</color>
+
+    <color name="secondaryColor">#d32c2c</color>
+
+    <color name="secondaryLightColor">#ff6356</color>
+
+    <color name="secondaryDarkColor">#9a0003</color>
+
+    <color name="primaryTextColor">#000000</color>
+
+    <color name="secondaryTextColor">#ffffff</color>
+
 </resources>
