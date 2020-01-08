@@ -2,9 +2,7 @@ package com.blighter.algoprog.api;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.os.Build;
 import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -22,9 +20,7 @@ import com.blighter.algoprog.retrofit.SolutionsInterface;
 import com.blighter.algoprog.retrofit.TaskInterface;
 import com.mukesh.MarkdownView;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.safety.Whitelist;
 
 import java.util.List;
 
@@ -39,9 +35,13 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-
+//This class contains some methods which interacts with Algoprog Api(or algoprog itself) but can be used in different fragments
 public class ApiMethods {
+    private static String replaceHtmlTags(String s) {
+        return s.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&le;", "<=").replaceAll("&ge;", ">=");
+    }
 
+    //this method gets BestSolutions from Algoprog Api snd shows them in dialog with MarkDownView
     public static CompositeDisposable getBestSolutions(String cookies, String taskId, Context context) {
         CompositeDisposable disposables = new CompositeDisposable();
         BestSolutionsInterface client = Client.getClient().create(BestSolutionsInterface.class);
@@ -58,12 +58,14 @@ public class ApiMethods {
                     public void onNext(List<BestSolution> bestSolutions) {
                         Document.OutputSettings settings = new Document.OutputSettings().prettyPrint(false);
                         StringBuilder markdownHtml = new StringBuilder();
+                        //adding all information in one SpannableString
                         for (int i = 0; i < bestSolutions.size(); i++) {
+                            //replacing all additional information besides language name
                             markdownHtml.append("\n```").append(bestSolutions.get(i).getLanguage().replaceAll("[^a-zA-Z]+", "")).append("\n");
                             markdownHtml.append(replaceHtmlTags(bestSolutions.get(i).getSource())).append("\n```\n");
+                            //replacing html tags so code looks clean
                             markdownHtml.append("<p>").append(bestSolutions.get(i).getLanguage()).append("</p>").append("\n<hr></hr>\n");
                         }
-                        String cool = Jsoup.clean(bestSolutions.get(1).getSource(), "", Whitelist.none(), settings);
                         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
                         alertDialog.setPositiveButton("Закрыть", (dialog, which) -> {
                         });
@@ -88,7 +90,7 @@ public class ApiMethods {
         return disposables;
     }
 
-    // отправление запроса для получения класса Me
+    // getting Me from Algoprog Api
     public static void askForMe(String cookies, final Context context) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl("https://algoprog.ru/api/")
@@ -109,6 +111,7 @@ public class ApiMethods {
 
     }
 
+    // getting contest Solutions from Algoprog Api
     public static void getSolutions(final String id, String COOKIES, String userId) {
         SolutionsInterface client = Client.getClient().create(SolutionsInterface.class);
         client.getSolutions(COOKIES, userId, id)
@@ -122,7 +125,7 @@ public class ApiMethods {
 
                     @Override
                     public void onNext(List<Solution> solutions) {
-                        solutions.get(0).getResults();
+
                     }
 
                     @Override
@@ -137,7 +140,7 @@ public class ApiMethods {
                 });
     }
 
-
+    //Getting Task html from Algoprog with Jsoup, cleaning it and show it in WebView
     public static CompositeDisposable setTask(final String id, final WebView browser, final Context context) {
         TaskInterface client = Client.getClient().create(TaskInterface.class);
         CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -151,6 +154,7 @@ public class ApiMethods {
 
                     @Override
                     public void onNext(Task task) {
+                        //adding js code so we can implement MathJax into WebView
                         String styles = "<head> \n" +
                                 "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"> \n" +
                                 "  <link rel=\"stylesheet\" href=\"/bundle.css\"> \n" +
@@ -159,7 +163,6 @@ public class ApiMethods {
                                 "  <link rel=\"stylesheet\" href=\"/informatics.css\"> \n" +
                                 "  <link rel=\"stylesheet\" href=\"/highlight.css\"> \n" +
                                 "  <link rel=\"stylesheet\" href=\"/main.css\"> \n" +
-                                " <meta name=\"viewport\" content=\"width=device-width, user-scalable=yes\" />" +
                                 "</head>" +
                                 "<script type=\"text/x-mathjax-config\">" +
                                 "  MathJax.Hub.Config({\n" +
@@ -177,12 +180,9 @@ public class ApiMethods {
                                 "</body>" +
                                 "</html>";
                         String basicUrl = "https://algoprog.ru/material/" + id;
-                        String content = task.getContent();
-                        browser.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+                        //we replace all http with https to prevent mixed content error
+                        String content = task.getContent().replace("http", "https");
                         browser.getSettings().setJavaScriptEnabled(true);
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            browser.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-                        }
                         browser.loadDataWithBaseURL(basicUrl, styles + content, "text/html", "utf-8", "");
                     }
 
@@ -201,7 +201,4 @@ public class ApiMethods {
 
     }
 
-    private static String replaceHtmlTags(String s) {
-        return s.replaceAll("&lt;", "<").replaceAll("&gt;", ">").replaceAll("&le;", "<=").replaceAll("&ge;", ">=");
-    }
 }
