@@ -43,6 +43,7 @@ public class LoginFragment extends Fragment {
         button.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.primaryColor, null));
         TextInputEditText loginText = view.findViewById(R.id.login);
         TextInputEditText passwordText = view.findViewById(R.id.password);
+
         //if loginText or passwordText aren't empty set button enabled
         TextWatcher textWatcher = new TextWatcher() {
             @Override
@@ -53,12 +54,12 @@ public class LoginFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if ((!loginText.getText().toString().trim().isEmpty()) && (!passwordText.getText().toString().trim().isEmpty())) {
-                    passwordLayout.setError(null);
+                    passwordLayout.setHelperText(null);
                     button.setEnabled(true);
                     button.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.secondaryColor, null));
 
                 } else {
-                    passwordLayout.setError(null);
+                    passwordLayout.setHelperText(null);
                     button.setEnabled(false);
                     button.setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.primaryColor, null));
                 }

@@ -3,12 +3,12 @@ package com.blighter.algoprog.api;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.util.Pair;
 import android.view.Menu;
 import android.widget.Toast;
@@ -170,16 +170,27 @@ public class LoginMethods {
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d("сука", e.getMessage());
                         SharedPreferences data = context.getSharedPreferences(context.getString(R.string.app_preferences), Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = data.edit();
-                        editor.putBoolean(context.getString(R.string.oldCookies), true);
-                        editor.putBoolean(context.getString(R.string.noCookies), true);
-                        editor.apply();
-                        if (cookiesOnSuccess[0]) {
-                            textInputLayout.setError("Неизвестная ошибка");
+                        if (textInputLayout != null) {
+                            if (cookiesOnSuccess[0]) {
+
+                                textInputLayout.setHelperText("Неизвестная ошибка");
+                                textInputLayout.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                                textInputLayout.setHelperTextTextAppearance(R.style.TextHintSize);
+                            } else {
+
+                                textInputLayout.setHelperText("Неверный логин или пароль");
+                                textInputLayout.setHelperTextColor(ColorStateList.valueOf(Color.RED));
+                                textInputLayout.setHelperTextTextAppearance(R.style.TextHintSize);
+                            }
+                            editor.putBoolean(context.getString(R.string.oldCookies), true);
+                            editor.putBoolean(context.getString(R.string.noCookies), true);
+                            editor.apply();
                         } else {
-                            textInputLayout.setError("Неверный логин или пароль");
+                            editor.putBoolean(context.getString(R.string.oldCookies), true);
+                            editor.apply();
+                            Toast.makeText(context, "Нет подключения к интернету", Toast.LENGTH_SHORT).show();
                         }
                     }
 
