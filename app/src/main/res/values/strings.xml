@@ -23,7 +23,6 @@
     <string name="usernameInEnter">ИМЯ ПОЛЬЗОВАТЕЛЯ</string>
     <string name="passwordInEnter">ПАРОЛЬ</string>
     <string name="loginInEnterScreen">Войти</string>
-    <string name="rememberMe">Запомнить меня</string>
     <!--Login fragment strings-->
 
     <!--Starter fragment strings-->
@@ -87,18 +86,12 @@
     <!-- BestSubmits menu items -->
 
     <!--Task fragment strings-->
-    <string name="submit_result">Результат</string>
-    <string name="submit_time">Время</string>
-    <string name="submit_language">Язык</string>
-    <string name="submit_tests">Тесты</string>
-    <string name="submit_code">Исходный код</string>
     <string name="informatics">"Задача на informatics"</string>
     <!--Task fragment strings-->
     <!--No need in translation strings-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="nav_header_title">Android Studio</string>
     <!--No need in translation strings-->
     <!--Olymps screen strings-->
     <string name="olymps_reg">Региональные олимпиады</string>

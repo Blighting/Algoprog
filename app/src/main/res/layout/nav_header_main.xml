@@ -6,23 +6,23 @@
     android:background="@drawable/side_nav_bar"
     android:gravity="bottom"
     android:orientation="horizontal"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/paddingHorizontal"
+    android:paddingTop="@dimen/paddingHorizontal"
+    android:paddingRight="@dimen/paddingVertical"
+    android:paddingBottom="@dimen/paddingVertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:paddingTop="8dp"
         app:srcCompat="@drawable/logo_a1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:paddingTop="8dp"
         android:text="@string/text_view_in_navigation_drawer"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/colorForTextInTasks"

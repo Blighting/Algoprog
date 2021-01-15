@@ -15,6 +15,7 @@
         <item name="colorPrimary">@color/secondaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
         <item name="colorOnBackground">@color/backgroundColor</item>
+        <item name="colorPrimaryDark">@color/secondaryLightColor</item>
     </style>
 
     <style name="ShapeAppearance.Algoprog.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">

@@ -70,6 +70,11 @@
             android:icon="@drawable/ic_menu_code_black_24dp"
             android:orderInCategory="1"
             android:title="@string/Level_10" />
+        <item
+            android:id="@+id/nav_olymps"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/olymps" />
 
     </group>
     <group

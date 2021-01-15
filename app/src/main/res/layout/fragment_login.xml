@@ -17,7 +17,6 @@
             app:layout_constraintGuide_percent="0.28" />
 
         <LinearLayout
-            android:id="@+id/linear_layout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -26,9 +25,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginStart="@dimen/paddingHorizontalLarge"
+                android:layout_marginEnd="@dimen/paddingHorizontalLarge"
+                android:layout_marginBottom="@dimen/paddingVertical"
                 android:fontFamily="sans-serif"
                 android:text="@string/enterText"
                 android:textAlignment="center"
@@ -36,12 +35,11 @@
                 android:textSize="28sp" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/loginLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="@dimen/paddingHorizontalLarge"
+                android:layout_marginEnd="@dimen/paddingHorizontalLarge"
                 android:fontFamily="sans-serif"
                 android:hint="@string/usernameInEnter"
                 android:textColor="@color/colorForMainText"
@@ -50,20 +48,20 @@
                 app:hintTextAppearance="@style/TextHintSize">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login"
+                    android:id="@+id/et_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="17sp" />
+                    android:textSize="@dimen/font_normal" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordLayout"
+                android:id="@+id/txt_field_password"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginStart="@dimen/paddingHorizontalLarge"
+                android:layout_marginEnd="@dimen/paddingHorizontalLarge"
                 android:fontFamily="sans-serif"
                 android:hint="@string/passwordInEnter"
                 android:textColor="@color/colorForMainText"
@@ -73,23 +71,23 @@
                 app:hintTextAppearance="@style/TextHintSize">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password"
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textSize="17sp" />
+                    android:textSize="@dimen/font_normal" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/buttonForLogin"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="85dp"
         android:layout_marginEnd="85dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="@dimen/paddingVertical"
         android:elevation="16dp"
         android:fontFamily="sans-serif"
         android:text="@string/loginInEnterScreen"

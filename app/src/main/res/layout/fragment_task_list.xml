@@ -3,24 +3,39 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/tw_task_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="@dimen/paddingVertical"
         android:elevation="1dp"
         android:fontFamily="sans-serif"
         android:lineSpacingMultiplier="1.1"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:textColor="@color/colorForMainText"
-        android:textSize="25sp"
+        android:paddingStart="@dimen/paddingHorizontal"
+        android:paddingEnd="@dimen/paddingHorizontal"
+        android:textColor="@color/colorForBlockStart"
+        android:textSize="23sp"
         android:textStyle="bold">
 
     </TextView>
+    <WebView
+        android:paddingStart="@dimen/paddingHorizontal"
+        android:paddingEnd="@dimen/paddingHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/browser_for_labels">
+    </WebView>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mtrl_card_spacing"
+        android:layout_marginTop="@dimen/mtrl_card_spacing"
+        android:layout_marginRight="@dimen/mtrl_card_spacing"
+        android:divider="@android:color/transparent" />
 
     <ListView
         android:id="@+id/lv_for_tasks"

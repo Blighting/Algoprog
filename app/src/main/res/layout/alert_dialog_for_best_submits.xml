@@ -7,12 +7,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_in_bestSubmits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
+        android:paddingStart="@dimen/paddingHorizontal"
+        android:paddingEnd="@dimen/paddingHorizontal"
         android:text="@string/header_in_best_submits"
         android:textColor="@color/colorForMainText"
         android:textSize="24sp"

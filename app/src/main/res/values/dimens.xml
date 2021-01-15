@@ -1,6 +1,14 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <!-- typical spacing between two views -->
+    <dimen name="paddingHorizontal">16dp</dimen>
+    <dimen name="paddingHorizontalLarge">25dp</dimen>
+    <dimen name="paddingBottom">20dp</dimen>
+    <dimen name="paddingVertical">16dp</dimen>
+    <!-- typical sizes of views -->
+
+    <!-- font sizes -->
+    <dimen name="font_normal">16sp</dimen>
+    <dimen name="font_large">18sp</dimen>
+    <dimen name="font_huge">22sp</dimen>
 </resources>
+

@@ -70,6 +70,12 @@
             android:icon="@drawable/ic_menu_code_black_24dp"
             android:orderInCategory="1"
             android:title="@string/Level_10" />
+        <item
+            android:id="@+id/nav_olymps"
+            android:icon="@drawable/ic_menu_code_black_24dp"
+            android:orderInCategory="1"
+            android:title="@string/olymps" />
+
 
     </group>
     <group
@@ -79,7 +85,7 @@
             android:id="@+id/nav_change_user"
             android:icon="@drawable/ic_menu_import_export_black"
             android:orderInCategory="2"
-            android:title="@string/change_user"></item>
+            android:title="@string/change_user" />
         <item
             android:id="@+id/nav_exit"
             android:icon="@drawable/ic_menu_export_black"

@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginStart="@dimen/paddingHorizontal"
+        android:layout_marginEnd="@dimen/paddingHorizontal"
         android:orientation="vertical">
 
         <TextView
@@ -25,17 +25,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/small_header_in_start"
-            android:textSize="22sp"
+            android:textSize="@dimen/font_huge"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/paddingVertical"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_algoprog_header"
@@ -44,53 +44,53 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/b_i_am_pupil"
+            android:id="@+id/btn_i_am_pupil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/b_in_start_pupil"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_normal"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/b_i_am_student"
+            android:id="@+id/btn_i_am_student"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="@dimen/paddingVertical"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/b_in_start_student"
-            android:textSize="16sp"
+            android:textSize="@dimen/font_normal"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_hello_i_am_pupil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/hello_i_am_pupil"
             android:textAllCaps="false"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp"
+            android:textSize="@dimen/font_large"
             android:typeface="sans" />
 
         <TextView
             android:id="@+id/tv_links"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/how_it_works"
@@ -107,12 +107,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_levels"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -122,12 +122,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_submit"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -137,12 +137,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_results"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -152,12 +152,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_comments"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -167,12 +167,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_ac"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -182,12 +182,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_ig"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -197,17 +197,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/about_best"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/paddingBottom"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:text="@string/i_am_interested_in_your_religion"
@@ -216,13 +216,13 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/how_to_start"
+            android:id="@+id/tv_how_to_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:lineSpacingMultiplier="1.1"
             android:textColor="@color/colorForMainText"
-            android:textSize="18sp" />
+            android:textSize="@dimen/font_large" />
 
     </LinearLayout>
 
